@@ -11,8 +11,8 @@ permissions:
 
 jobs:
   validate-and-merge:
-    # Only run on PRs opened by the Copilot agent
-    if: startsWith(github.head_ref, 'copilot/')
+    # Run on any PR from a Copilot agent branch (copilot/ or copilot-)
+    if: startsWith(github.head_ref, 'copilot/') || startsWith(github.head_ref, 'copilot-')
     runs-on: ubuntu-latest
 
     steps:

@@ -69,6 +69,8 @@ jobs:
           unique = unique[:20]
 
           lines = [
+              f"@copilot Please complete this task by creating the file described below. Follow every instruction precisely.",
+              "",
               f"## Task: Add daily news bulletin for {TODAY}",
               "",
               f"Create the file `content/{YEAR}/{MONTH}/{TODAY}.json` with today's RBI Grade B relevant news, structured for exam preparation.",
@@ -93,6 +95,7 @@ jobs:
               "9. **Skip** any article that is not genuinely about Indian banking/finance/economy.",
               "   - SKIP: pure party politics, sports, crime, entertainment with no economic angle",
               "   - KEEP: fiscal policy, state borrowing, welfare scheme budgets, economic impact of policy",
+              "10. Open a pull request targeting the `main` branch with the created/updated files.",
               "",
               "### Today's news items fetched from RSS",
               "",
@@ -115,22 +118,22 @@ jobs:
           print(f"Generated issue body with {len(unique)} items")
           PYEOF
 
-      - name: Create GitHub Issue and assign to Copilot
+      - name: Create GitHub Issue (with @copilot trigger in body)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
 
           # Skip if issue for today already exists
-          EXISTING=$(gh issue list \
+          EXISTING_NUM=$(gh issue list \
             --repo "$GITHUB_REPOSITORY" \
             --label "daily-news" \
             --state open \
-            --json title \
-            --jq ".[] | select(.title | contains(\"$DATE\")) | .title" | head -1)
+            --json number,title \
+            --jq ".[] | select(.title | contains(\"$DATE\")) | .number" | head -1)
 
-          if [ -n "$EXISTING" ]; then
-            echo "Issue for $DATE already exists — skipping."
+          if [ -n "$EXISTING_NUM" ]; then
+            echo "Issue for $DATE already exists (#$EXISTING_NUM) — skipping."
             exit 0
           fi
 
@@ -140,19 +143,11 @@ jobs:
             --description "Daily automated news task for Copilot" \
             2>/dev/null || true
 
-          # Create the issue (no --assignee flag — bot can't be assigned via API token)
-          ISSUE_URL=$(gh issue create \
+          # @copilot is in the issue body — triggers the agent on creation, no separate comment needed
+          gh issue create \
             --repo "$GITHUB_REPOSITORY" \
             --title "Daily news bulletin: $DATE" \
             --body-file issue_body.md \
-            --label "daily-news")
+            --label "daily-news"
 
-          echo "Issue created: $ISSUE_URL"
-
-          # Trigger Copilot agent by posting a comment that @mentions it
-          ISSUE_NUMBER=$(echo "$ISSUE_URL" | grep -o '[0-9]*$')
-          gh issue comment "$ISSUE_NUMBER" \
-            --repo "$GITHUB_REPOSITORY" \
-            --body "@copilot Please complete this task. Follow all the instructions in the issue body and in the \`news_prompt.md\` file in the repository root."
-
-          echo "Copilot triggered via comment on issue #$ISSUE_NUMBER"
+          echo "Issue created for $DATE — @copilot triggered via issue body mention"
