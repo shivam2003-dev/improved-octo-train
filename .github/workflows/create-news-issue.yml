@@ -27,73 +27,76 @@ jobs:
             --description "Daily automated news task for Copilot" \
             2>/dev/null || true
 
+          cat > /tmp/issue_body.md << BODY
+          @copilot Please complete this task using your web search capability.
+
+          ## Task: Create daily RBI Grade B news bulletin for ${DATE}
+
+          ### Step 1 - Search the web for today's relevant news
+
+          Use web search with these queries (substitute ${DATE} as the date):
+          - RBI India banking news ${DATE}
+          - India economy finance news ${DATE}
+          - MPC repo rate inflation India ${DATE}
+          - SEBI NABARD SIDBI India finance ${DATE}
+          - India GDP budget fiscal policy ${DATE}
+          - site:rbi.org.in ${DATE}
+
+          ### Step 2 - Filter by RBI Grade B relevance
+
+          INCLUDE: RBI policies, MPC decisions, banking regulation, inflation/GDP data, SEBI/IRDAI/PFRDA actions, government schemes with financial angle, fiscal/monetary policy, IMF/World Bank reports on India, bank results, NPA/credit data, capital markets, financial inclusion
+
+          SKIP: pure party politics with no economic angle, sports, crime, entertainment, weather
+
+          ### Step 3 - Create the output files
+
+          File 1: content/${YEAR}/${MONTH}/${DATE}.json
+          A JSON array of article objects. Aim for 5-10 articles.
+
+          File 2: content/index.json
+          Prepend "${DATE}" to the existing array (if not already present).
+
+          Then open a pull request targeting the main branch with both files.
+
+          ### Article JSON schema (read news_prompt.md in this repo for full rules)
+
+          Each article object in the array:
+
+          {
+            "id": "auto-${DATE}-<25-char-title-slug>",
+            "date": "${DATE}",
+            "category": "CurrentAffairs | FinancialSystems | BankingSystems | MonetaryPlans | NationalInstitutions | BankingTerms",
+            "title": "<max 110 chars>",
+            "summary": "<1-2 sentences, max 80 words>",
+            "readTime": 4,
+            "source": "<real URL from your web search>",
+            "concepts": ["Term1", "Term2", "Term3"],
+            "body": [
+              { "kind": "h2", "text": "What happened" },
+              { "kind": "p",  "text": "3-4 sentences of factual context from the article" },
+              { "kind": "h2", "text": "Why it matters for RBI Grade B" },
+              { "kind": "p",  "text": "Which syllabus topic this connects to and why examiners test it" },
+              { "kind": "h2", "text": "Key concepts to revise" },
+              { "kind": "ul", "items": ["Term: definition", "Term: definition", "Term: definition"] },
+              { "kind": "h2", "text": "Exam-ready data points" },
+              { "kind": "ul", "items": ["Specific number/date/threshold from the article"] }
+            ],
+            "mcqs": [
+              { "q": "question", "options": ["A","B","C","D"], "answer": 0, "explain": "why A is correct" },
+              { "q": "question", "options": ["A","B","C","D"], "answer": 1, "explain": "why B is correct" }
+            ]
+          }
+
+          Hard rules:
+          - No hallucination: every fact must come from a real article found via web search
+          - All body sections must have substantive text, no empty strings
+          - source must be a real URL you found, not a placeholder
+          BODY
+
           gh issue create \
             --repo "$GITHUB_REPOSITORY" \
             --title "Daily news bulletin: $DATE" \
             --label "daily-news" \
-            --body "@copilot Please complete this task using your web search capability.
+            --body-file /tmp/issue_body.md
 
-## Task: Create daily RBI Grade B news bulletin for $DATE
-
-### Step 1 — Search the web for today's relevant news
-
-Use web search with these queries (use the date $DATE):
-- \`RBI India banking news $DATE\`
-- \`India economy finance news $DATE\`
-- \`MPC repo rate inflation India $DATE\`
-- \`SEBI NABARD SIDBI India finance $DATE\`
-- \`India GDP budget fiscal policy $DATE\`
-- \`site:rbi.org.in $DATE\`
-
-### Step 2 — Filter by RBI Grade B relevance
-
-✅ INCLUDE: RBI policies, MPC decisions, banking regulation, inflation/GDP data, SEBI/IRDAI/PFRDA actions, government schemes with financial angle, fiscal/monetary policy, IMF/World Bank reports on India, bank results, NPA/credit data, capital markets, financial inclusion
-
-❌ SKIP: pure party politics with no economic angle, sports, crime, entertainment, weather
-
-### Step 3 — Create the output files
-
-**File 1:** \`content/$YEAR/$MONTH/$DATE.json\`
-A JSON **array** of article objects. Aim for 5–10 articles.
-
-**File 2:** \`content/index.json\`
-Prepend \`\"$DATE\"\` to the existing array (if not already present).
-
-Then **open a pull request** targeting the \`main\` branch with both files.
-
-### Article JSON schema
-
-Read \`news_prompt.md\` in this repo for full category rules and quality requirements.
-
-Each article object:
-\`\`\`json
-{
-  \"id\": \"auto-$DATE-<25-char-title-slug>\",
-  \"date\": \"$DATE\",
-  \"category\": \"CurrentAffairs | FinancialSystems | BankingSystems | MonetaryPlans | NationalInstitutions | BankingTerms\",
-  \"title\": \"<max 110 chars>\",
-  \"summary\": \"<1-2 sentences, max 80 words>\",
-  \"readTime\": 4,
-  \"source\": \"<real URL from your search>\",
-  \"concepts\": [\"Term1\", \"Term2\", \"Term3\"],
-  \"body\": [
-    { \"kind\": \"h2\", \"text\": \"What happened\" },
-    { \"kind\": \"p\",  \"text\": \"3-4 sentences of factual context from the article\" },
-    { \"kind\": \"h2\", \"text\": \"Why it matters for RBI Grade B\" },
-    { \"kind\": \"p\",  \"text\": \"Which syllabus topic this connects to and why examiners test it\" },
-    { \"kind\": \"h2\", \"text\": \"Key concepts to revise\" },
-    { \"kind\": \"ul\", \"items\": [\"Term: definition\", \"Term: definition\", \"Term: definition\"] },
-    { \"kind\": \"h2\", \"text\": \"Exam-ready data points\" },
-    { \"kind\": \"ul\", \"items\": [\"Specific number/date/threshold from the article\"] }
-  ],
-  \"mcqs\": [
-    { \"q\": \"question text\", \"options\": [\"A\",\"B\",\"C\",\"D\"], \"answer\": 0, \"explain\": \"why A is correct\" },
-    { \"q\": \"question text\", \"options\": [\"A\",\"B\",\"C\",\"D\"], \"answer\": 1, \"explain\": \"why B is correct\" }
-  ]
-}
-\`\`\`
-
-### Hard rules
-- No hallucination — every fact, number, date must come from a real article found via web search
-- All body sections must contain substantive text (no empty strings)
-- source must be a real URL you found, not a placeholder"
+          echo "Issue created for $DATE"
