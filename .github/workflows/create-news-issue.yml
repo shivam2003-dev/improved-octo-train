@@ -124,11 +124,11 @@ jobs:
         run: |
           DATE=$(date -u +%Y-%m-%d)
 
-          # Skip if issue for today already exists
+          # Skip if issue for today already exists (open OR closed)
           EXISTING_NUM=$(gh issue list \
             --repo "$GITHUB_REPOSITORY" \
             --label "daily-news" \
-            --state open \
+            --state all \
             --json number,title \
             --jq ".[] | select(.title | contains(\"$DATE\")) | .number" | head -1)
 
