@@ -1,0 +1,95 @@
+name: Auto-merge Copilot News PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate-and-merge:
+    # Only run on PRs opened by the Copilot agent
+    if: startsWith(github.head_ref, 'copilot/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Validate content JSON files
+        run: |
+          python3 - << 'PYEOF'
+          import json, sys, glob
+
+          REQUIRED_FIELDS = ["id", "date", "category", "title", "summary",
+                             "readTime", "source", "concepts", "body", "mcqs"]
+
+          VALID_CATEGORIES = [
+              "CurrentAffairs", "FinancialSystems", "BankingSystems",
+              "MonetaryPlans", "NationalInstitutions", "BankingTerms"
+          ]
+
+          files = [f for f in glob.glob("content/**/*.json", recursive=True)
+                   if f != "content/index.json"]
+
+          if not files:
+              print("No content JSON files found in PR — nothing to validate.")
+              sys.exit(0)
+
+          errors = []
+          for path in files:
+              try:
+                  data = json.loads(open(path).read())
+              except json.JSONDecodeError as e:
+                  errors.append(f"{path}: invalid JSON — {e}")
+                  continue
+
+              if not isinstance(data, list):
+                  errors.append(f"{path}: root must be a JSON array")
+                  continue
+
+              for art in data:
+                  art_id = art.get("id", "?")
+                  for field in REQUIRED_FIELDS:
+                      if field not in art:
+                          errors.append(f"{path} [{art_id}]: missing field '{field}'")
+                  # Reject empty body
+                  body = art.get("body", [])
+                  if not body:
+                      errors.append(f"{path} [{art_id}]: body is empty")
+                  elif all(b.get("text", b.get("items", ["x"])) in ([""], "", []) for b in body):
+                      errors.append(f"{path} [{art_id}]: body contains only empty strings")
+                  # Category must be valid
+                  cat = art.get("category", "")
+                  if cat and cat not in VALID_CATEGORIES:
+                      errors.append(f"{path} [{art_id}]: unknown category '{cat}'")
+
+          if errors:
+              print("Validation FAILED:")
+              for e in errors:
+                  print(f"  ERROR: {e}")
+              sys.exit(1)
+
+          print(f"Validated {len(files)} file(s) — all OK")
+          PYEOF
+
+      - name: Approve and auto-merge PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+
+          gh pr review "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --approve \
+            --body "Validation passed. Auto-merging daily news PR."
+
+          gh pr merge "$PR_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --squash \
+            --subject "chore: daily news $(date -u +%Y-%m-%d) [auto-merged]" \
+            --delete-branch

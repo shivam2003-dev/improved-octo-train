@@ -1,59 +1,23 @@
-name: Daily News Fetch & Deploy
+name: Manual Deploy to GitHub Pages
 
 on:
-  schedule:
-    # Runs at 06:30 UTC every day (12:00 IST)
-    - cron: '30 6 * * *'
-  workflow_dispatch:  # allow manual trigger from GitHub UI / gh CLI
+  workflow_dispatch:  # manual trigger only — daily news is now handled by create-news-issue.yml + Copilot
 
 permissions:
-  contents: write   # push updated data.jsx back to main
-  pages: write      # deploy to GitHub Pages
-  id-token: write   # OIDC for Pages
-  models: read      # GitHub Copilot Models API (your Copilot subscription)
+  contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  REPO: ${{ vars.BULLETIN_REPO }}   # set by setup.sh via: gh variable set BULLETIN_REPO
-
 jobs:
-  fetch-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # Use the classic PAT so git push can trigger further workflows
-          token: ${{ secrets.BULLETIN_PAT || secrets.GITHUB_TOKEN }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      # fetch_news.py reads news_prompt.md for AI instructions,
-      # fetches real RSS text, then calls GitHub Models (Copilot)
-      # to structure it — no hallucination, only real scraped content.
-      - name: Fetch & AI-structure latest news
-        env:
-          # GitHub Models API uses the same token that has Copilot subscription
-          GITHUB_TOKEN: ${{ secrets.BULLETIN_PAT || secrets.GITHUB_TOKEN }}
-        run: python fetch_news.py
-
-      - name: Commit updated data (if changed)
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.jsx content/
-          if git diff --cached --quiet; then
-            echo "No new articles today — skipping commit."
-          else
-            git commit -m "chore: daily news update $(date -u +%Y-%m-%d)"
-            git push
-          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -63,3 +27,4 @@ jobs:
           publish_branch: gh-pages
           exclude_assets: '.github,fetch_news.py,news_prompt.md,setup.sh,*.md'
           force_orphan: false
+
