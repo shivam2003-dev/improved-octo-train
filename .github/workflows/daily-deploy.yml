@@ -4,12 +4,13 @@ on:
   schedule:
     # Runs at 06:30 UTC every day (12:00 IST)
     - cron: '30 6 * * *'
-  workflow_dispatch:  # allow manual trigger
+  workflow_dispatch:  # allow manual trigger from GitHub UI
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: write   # push updated data.jsx back to main
+  pages: write      # deploy to GitHub Pages
+  id-token: write   # OIDC for Pages
+  models: read      # GitHub Copilot Models API (your Copilot subscription)
 
 concurrency:
   group: "pages"
@@ -29,7 +30,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Fetch latest news
+      # fetch_news.py reads news_prompt.md for AI instructions,
+      # fetches real RSS text, then calls GitHub Models (Copilot)
+      # to structure it — no hallucination, only real scraped content.
+      - name: Fetch & AI-structure latest news
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python fetch_news.py
 
       - name: Commit updated data (if changed)
@@ -38,7 +44,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.jsx
           if git diff --cached --quiet; then
-            echo "No new articles today."
+            echo "No new articles today — skipping commit."
           else
             git commit -m "chore: daily news update $(date -u +%Y-%m-%d)"
             git push
@@ -50,5 +56,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-          exclude_assets: '.github,fetch_news.py,*.md'
+          exclude_assets: '.github,fetch_news.py,news_prompt.md,*.md'
           force_orphan: false
