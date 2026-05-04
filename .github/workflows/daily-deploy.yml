@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs at 06:30 UTC every day (12:00 IST)
     - cron: '30 6 * * *'
-  workflow_dispatch:  # allow manual trigger from GitHub UI
+  workflow_dispatch:  # allow manual trigger from GitHub UI / gh CLI
 
 permissions:
   contents: write   # push updated data.jsx back to main
@@ -16,6 +16,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  REPO: ${{ vars.BULLETIN_REPO }}   # set by setup.sh via: gh variable set BULLETIN_REPO
+
 jobs:
   fetch-and-deploy:
     runs-on: ubuntu-latest
@@ -23,7 +26,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Use the classic PAT so git push can trigger further workflows
+          token: ${{ secrets.BULLETIN_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -35,7 +39,8 @@ jobs:
       # to structure it — no hallucination, only real scraped content.
       - name: Fetch & AI-structure latest news
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GitHub Models API uses the same token that has Copilot subscription
+          GITHUB_TOKEN: ${{ secrets.BULLETIN_PAT || secrets.GITHUB_TOKEN }}
         run: python fetch_news.py
 
       - name: Commit updated data (if changed)
@@ -56,5 +61,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-          exclude_assets: '.github,fetch_news.py,news_prompt.md,*.md'
+          exclude_assets: '.github,fetch_news.py,news_prompt.md,setup.sh,*.md'
           force_orphan: false
