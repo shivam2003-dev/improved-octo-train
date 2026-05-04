@@ -1,0 +1,38 @@
+[
+  {
+    "id": "a06",
+    "date": "2026-05-03",
+    "category": "FinancialSystems",
+    "title": "RBI introduces unified Digital Banking Units (DBU) framework 2.0",
+    "summary": "Revised DBU framework permits banks to offer wealth management, cross-border remittance, and offline retail CBDC at digital banking units.",
+    "readTime": 4,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  },
+  {
+    "id": "a07",
+    "date": "2026-05-03",
+    "category": "BankingSystems",
+    "title": "SBI raises ₹15,000 crore via Tier-2 bonds at 7.42%",
+    "summary": "State Bank of India raises ₹15,000 crore through 15-year Basel-III compliant Tier-2 bonds, 4x oversubscribed at coupon of 7.42%.",
+    "readTime": 3,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  },
+  {
+    "id": "bt02",
+    "date": "2026-05-03",
+    "category": "BankingTerms",
+    "title": "Priority Sector Lending (PSL): targets, sub-targets and adjusted net bank credit",
+    "summary": "PSL mandates banks to lend 40% of ANBC to priority sectors — agriculture, MSMEs, education, housing and weaker sections. Non-compliance attracts RIDF/SEDF contribution.",
+    "readTime": 5,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  }
+]

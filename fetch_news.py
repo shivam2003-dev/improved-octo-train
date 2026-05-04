@@ -230,6 +230,66 @@ def inject_articles(jsx: str, blocks: list[str]) -> str:
     return jsx[:insert] + joined + jsx[insert:]
 
 
+def build_article_dict(raw: dict, ai: dict) -> dict:
+    """Build a plain Python dict for JSON serialisation."""
+    return {
+        "id":       slugify_id(ai.get("title", raw["title"]), raw["date"]),
+        "date":     raw["date"],
+        "category": ai.get("category", "CurrentAffairs"),
+        "title":    ai.get("title",    raw["title"]),
+        "summary":  ai.get("summary",  raw["desc"][:150]).replace("\n", " "),
+        "readTime": ai.get("readTime", max(1, math.ceil(len(raw["desc"].split()) / 200))),
+        "source":   raw["link"],
+        "concepts": ai.get("concepts", []),
+        "body":     ai.get("body",     [{"kind": "p", "text": raw["desc"][:300]}]),
+        "mcqs":     ai.get("mcqs",     []),
+    }
+
+
+def save_daily_json(articles: list[dict], date: str) -> Path:
+    """
+    Write content/YYYY/MM/YYYY-MM-DD.json with today's articles.
+    Merges with any existing file for that date (re-runs are safe).
+    Returns the file path.
+    """
+    year, month = date[:4], date[5:7]
+    folder = Path("content") / year / month
+    folder.mkdir(parents=True, exist_ok=True)
+    filepath = folder / f"{date}.json"
+
+    existing: list[dict] = []
+    if filepath.exists():
+        try:
+            existing = json.loads(filepath.read_text(encoding="utf-8"))
+        except Exception:
+            existing = []
+
+    existing_ids = {a["id"] for a in existing}
+    merged = existing + [a for a in articles if a["id"] not in existing_ids]
+    filepath.write_text(json.dumps(merged, indent=2, ensure_ascii=False), encoding="utf-8")
+    return filepath
+
+
+def update_content_index(date: str) -> None:
+    """
+    Maintain content/index.json — a sorted list of all available date files.
+    The website JS reads this to know which JSON files to fetch.
+    """
+    index_path = Path("content/index.json")
+    dates: list[str] = []
+    if index_path.exists():
+        try:
+            dates = json.loads(index_path.read_text(encoding="utf-8"))
+        except Exception:
+            dates = []
+
+    if date not in dates:
+        dates.append(date)
+        dates.sort(reverse=True)   # newest first
+        index_path.write_text(json.dumps(dates, indent=2), encoding="utf-8")
+        print(f"  ✓ content/index.json updated ({len(dates)} entries)")
+
+
 # ── main ───────────────────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -273,24 +333,35 @@ def main() -> None:
 
     print(f"{len(candidates)} new relevant article(s) to process with GitHub Copilot.\n")
 
-    blocks: list[str] = []
+    js_blocks:    list[str]  = []
+    article_dicts: list[dict] = []
+
     for item in candidates:
         print(f"  → [{item['date']}] {item['title'][:75]}")
         ai = process_with_copilot(item, system_prompt, token)
         if ai is None:
             print("    skipped (AI returned skip or failed)")
             continue
-        blocks.append(article_to_js(item, ai))
+        js_blocks.append(article_to_js(item, ai))
+        article_dicts.append(build_article_dict(item, ai))
         print(f"    ✓ category={ai.get('category')}  concepts={ai.get('concepts', [])[:3]}")
 
-    if not blocks:
-        print("\nNo new articles injected today.")
+    if not js_blocks:
+        print("\nNo new articles today.")
         return
 
-    updated = inject_articles(jsx, blocks)
+    # 1. Inject into data.jsx (website runtime)
+    updated = inject_articles(jsx, js_blocks)
     with open(DATA_JSX_PATH, "w", encoding="utf-8") as f:
         f.write(updated)
-    print(f"\n✓ Injected {len(blocks)} article(s) into {DATA_JSX_PATH}.")
+    print(f"\n✓ Injected {len(js_blocks)} article(s) into {DATA_JSX_PATH}.")
+
+    # 2. Save organised daily JSON: content/YYYY/MM/YYYY-MM-DD.json
+    saved_path = save_daily_json(article_dicts, today)
+    print(f"✓ Saved daily JSON → {saved_path}  ({len(article_dicts)} articles)")
+
+    # 3. Update content/index.json manifest
+    update_content_index(today)
 
 
 if __name__ == "__main__":
