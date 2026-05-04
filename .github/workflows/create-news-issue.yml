@@ -2,7 +2,7 @@ name: Create Daily News Issue for Copilot
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # 04:00 UTC = 09:30 IST — before work hours
+    - cron: '0 4 * * *'   # 04:00 UTC = 09:30 IST
   workflow_dispatch:
 
 permissions:
@@ -13,128 +13,87 @@ jobs:
   create-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Fetch RSS and generate issue body
-        run: |
-          python3 - << 'PYEOF'
-          import urllib.request, xml.etree.ElementTree as ET, re, sys
-          from datetime import datetime, timezone
-
-          TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-          YEAR, MONTH = TODAY[:4], TODAY[5:7]
-
-          FEEDS = [
-              "https://www.rbi.org.in/Scripts/rss.aspx",
-              "https://economictimes.indiatimes.com/rssfeedstopstories.cms",
-              "https://www.thehindubusinessline.com/economy/macro-economy/?service=rss",
-              "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms",
-          ]
-
-          KEYWORDS = [
-              "rbi", "reserve bank", "repo", "crr", "slr", "mpc", "inflation",
-              "gdp", "bank", "nbfc", "npa", "sebi", "irdai", "nabard", "sidbi",
-              "fiscal", "budget", "gst", "imf", "world bank", "monetary",
-              "credit", "loan", "deposit", "capital", "liquidity", "scheme",
-              "yojana", "pradhan mantri", "finance", "rupee", "forex",
-              "interest rate", "treasury", "bond", "g-sec",
-              "insurance", "pension", "pfrda", "ipo", "mutual fund",
-              "deficit", "revenue", "expenditure", "subsidy", "disinvestment",
-              "sdl", "financial inclusion", "ecb", "fdi", "fpi",
-          ]
-
-          items = []
-          for url in FEEDS:
-              try:
-                  req = urllib.request.Request(url, headers={"User-Agent": "BulletinBot/1.0"})
-                  with urllib.request.urlopen(req, timeout=15) as r:
-                      root = ET.fromstring(r.read())
-                  for e in root.findall(".//item")[:12]:
-                      title = (e.findtext("title") or "").strip()
-                      desc  = re.sub(r"<[^>]+>", "", e.findtext("description") or "").strip()[:700]
-                      link  = (e.findtext("link") or "").strip()
-                      text  = (title + " " + desc).lower()
-                      if title and any(kw in text for kw in KEYWORDS):
-                          items.append({"title": title, "desc": desc, "link": link})
-              except Exception as ex:
-                  print(f"warn: {url}: {ex}", file=sys.stderr)
-
-          # Deduplicate by title
-          seen, unique = set(), []
-          for it in items:
-              key = it["title"].lower()[:60]
-              if key not in seen:
-                  seen.add(key)
-                  unique.append(it)
-          unique = unique[:20]
-
-          lines = [
-              f"@copilot Please complete this task by creating the file described below. Follow every instruction precisely.",
-              "",
-              f"## Task: Add daily news bulletin for {TODAY}",
-              "",
-              f"Create the file `content/{YEAR}/{MONTH}/{TODAY}.json` with today's RBI Grade B relevant news, structured for exam preparation.",
-              "",
-              "### Instructions",
-              "",
-              f"1. Output file path: **`content/{YEAR}/{MONTH}/{TODAY}.json`**",
-              "2. Also update **`content/index.json`** — prepend today's date to the array if not already present.",
-              "3. Read **`news_prompt.md`** in the repo root — it contains the full JSON schema and quality rules.",
-              "4. The output file must be a JSON **array** `[...]` of article objects.",
-              "5. Each article object must have these fields:",
-              "   ```",
-              '   id, date, category, title, summary, readTime, source, concepts, body, mcqs',
-              "   ```",
-              f'6. `id` format: `auto-{TODAY}-<slug>` where slug = first 25 chars of title, lowercased, spaces→hyphens.',
-              "7. **Body must have exactly 4 sections** (see `news_prompt.md`):",
-              "   - `What happened` (3–4 sentences of factual context)",
-              "   - `Why it matters for RBI Grade B` (syllabus connection)",
-              "   - `Key concepts to revise` (ul list of 4–6 banking terms with brief definitions)",
-              "   - `Exam-ready data points` (ul list of numbers/dates/thresholds from the article)",
-              "8. Each article needs **2 MCQs** based only on facts stated in the article text.",
-              "9. **Skip** any article that is not genuinely about Indian banking/finance/economy.",
-              "   - SKIP: pure party politics, sports, crime, entertainment with no economic angle",
-              "   - KEEP: fiscal policy, state borrowing, welfare scheme budgets, economic impact of policy",
-              "10. Open a pull request targeting the `main` branch with the created/updated files.",
-              "",
-              "### Today's news items fetched from RSS",
-              "",
-          ]
-
-          for i, it in enumerate(unique, 1):
-              lines.append(f"**{i}. {it['title']}**  ")
-              if it["desc"]:
-                  lines.append(f"> {it['desc']}  ")
-              lines.append(f"URL: {it['link']}")
-              lines.append("")
-
-          if not unique:
-              lines.append("_No relevant finance/banking items found today._")
-              lines.append(f"_Create an empty array `[]` in `content/{YEAR}/{MONTH}/{TODAY}.json`._")
-
-          with open("issue_body.md", "w") as f:
-              f.write("\n".join(lines))
-
-          print(f"Generated issue body with {len(unique)} items")
-          PYEOF
-
-      - name: Create GitHub Issue (with @copilot trigger in body)
+      - name: Create issue for Copilot
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
+          YEAR=$(date -u +%Y)
+          MONTH=$(date -u +%m)
 
-          # Create label if it doesn't exist
           gh label create "daily-news" \
+            --repo "$GITHUB_REPOSITORY" \
             --color "#0075ca" \
             --description "Daily automated news task for Copilot" \
             2>/dev/null || true
 
-          # @copilot is in the issue body — triggers the agent on creation
           gh issue create \
             --repo "$GITHUB_REPOSITORY" \
             --title "Daily news bulletin: $DATE" \
-            --body-file issue_body.md \
-            --label "daily-news"
+            --label "daily-news" \
+            --body "@copilot Please complete this task using your web search capability.
 
-          echo "Issue created for $DATE — @copilot triggered"
+## Task: Create daily RBI Grade B news bulletin for $DATE
+
+### Step 1 — Search the web for today's relevant news
+
+Use web search with these queries (use the date $DATE):
+- \`RBI India banking news $DATE\`
+- \`India economy finance news $DATE\`
+- \`MPC repo rate inflation India $DATE\`
+- \`SEBI NABARD SIDBI India finance $DATE\`
+- \`India GDP budget fiscal policy $DATE\`
+- \`site:rbi.org.in $DATE\`
+
+### Step 2 — Filter by RBI Grade B relevance
+
+✅ INCLUDE: RBI policies, MPC decisions, banking regulation, inflation/GDP data, SEBI/IRDAI/PFRDA actions, government schemes with financial angle, fiscal/monetary policy, IMF/World Bank reports on India, bank results, NPA/credit data, capital markets, financial inclusion
+
+❌ SKIP: pure party politics with no economic angle, sports, crime, entertainment, weather
+
+### Step 3 — Create the output files
+
+**File 1:** \`content/$YEAR/$MONTH/$DATE.json\`
+A JSON **array** of article objects. Aim for 5–10 articles.
+
+**File 2:** \`content/index.json\`
+Prepend \`\"$DATE\"\` to the existing array (if not already present).
+
+Then **open a pull request** targeting the \`main\` branch with both files.
+
+### Article JSON schema
+
+Read \`news_prompt.md\` in this repo for full category rules and quality requirements.
+
+Each article object:
+\`\`\`json
+{
+  \"id\": \"auto-$DATE-<25-char-title-slug>\",
+  \"date\": \"$DATE\",
+  \"category\": \"CurrentAffairs | FinancialSystems | BankingSystems | MonetaryPlans | NationalInstitutions | BankingTerms\",
+  \"title\": \"<max 110 chars>\",
+  \"summary\": \"<1-2 sentences, max 80 words>\",
+  \"readTime\": 4,
+  \"source\": \"<real URL from your search>\",
+  \"concepts\": [\"Term1\", \"Term2\", \"Term3\"],
+  \"body\": [
+    { \"kind\": \"h2\", \"text\": \"What happened\" },
+    { \"kind\": \"p\",  \"text\": \"3-4 sentences of factual context from the article\" },
+    { \"kind\": \"h2\", \"text\": \"Why it matters for RBI Grade B\" },
+    { \"kind\": \"p\",  \"text\": \"Which syllabus topic this connects to and why examiners test it\" },
+    { \"kind\": \"h2\", \"text\": \"Key concepts to revise\" },
+    { \"kind\": \"ul\", \"items\": [\"Term: definition\", \"Term: definition\", \"Term: definition\"] },
+    { \"kind\": \"h2\", \"text\": \"Exam-ready data points\" },
+    { \"kind\": \"ul\", \"items\": [\"Specific number/date/threshold from the article\"] }
+  ],
+  \"mcqs\": [
+    { \"q\": \"question text\", \"options\": [\"A\",\"B\",\"C\",\"D\"], \"answer\": 0, \"explain\": \"why A is correct\" },
+    { \"q\": \"question text\", \"options\": [\"A\",\"B\",\"C\",\"D\"], \"answer\": 1, \"explain\": \"why B is correct\" }
+  ]
+}
+\`\`\`
+
+### Hard rules
+- No hallucination — every fact, number, date must come from a real article found via web search
+- All body sections must contain substantive text (no empty strings)
+- source must be a real URL you found, not a placeholder"
