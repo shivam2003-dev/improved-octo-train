@@ -43,8 +43,17 @@ RELEVANT_KEYWORDS = [
     "fiscal", "budget", "gst", "imf", "world bank", "monetary",
     "credit", "loan", "deposit", "capital", "liquidity", "scheme",
     "yojana", "pradhan mantri", "economy", "finance", "rupee", "forex",
-    "interest rate", "treasury", "bond", "g-sec", "market",
+    "interest rate", "treasury", "bond", "g-sec",
+    "insurance", "pension", "pfrda", "lic", "ipo", "mutual fund",
+    "current account", "balance of payment", "fdi", "fpi", "ecb",
+    "msme", "priority sector", "microfinance", "nbfc-mfi", "gold bond",
+    "deficit", "revenue", "expenditure", "subsidy", "disinvestment",
+    "sdl", "state borrowing", "rbi grade", "financial inclusion",
 ]
+
+# Pre-filter: a title/desc must contain at least one finance keyword above.
+# The Copilot prompt is the final gate — it returns {"skip": true} for anything
+# that doesn't genuinely relate to Indian banking/finance/economy for exam purposes.
 
 DATA_JSX_PATH  = "data.jsx"
 PROMPT_MD_PATH = "news_prompt.md"

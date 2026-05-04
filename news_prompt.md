@@ -65,6 +65,20 @@ Pick exactly one from this list based on the primary subject:
 ## Hard rules — violations cause the output to be discarded
 1. **No hallucination**: every number, name, percentage, and date in your output must appear in RAW TEXT.
 2. If RAW TEXT is too short to generate 2 MCQs, produce only 1 MCQ.
-3. If RAW TEXT is not related to Indian finance/economy/banking, return: `{"skip": true}`
+3. **Skip rule**: Return `{"skip": true}` if the article is primarily about:
+   - Pure party politics, election results, or coalition formation with NO fiscal/economic angle
+   - Sports, entertainment, crime, weather, military/defence
+   - A political personality with no direct connection to economic policy
+   - Example of SKIP: "TVK surge may trigger shake-up in DMK" — pure party politics
+   - Example of KEEP: "New state govt revises welfare budget, raises SDL borrowing" — fiscal/economic policy angle
 4. `concepts` must be real banking/finance terms, not generic words like "India" or "growth".
 5. The `title` field must not add claims not in the original headline.
+
+## Body depth requirement
+The `body` array MUST contain at least 4 sections with substantive content:
+- `"What happened"` — 3–4 sentences of factual context from RAW TEXT
+- `"Why it matters for RBI Grade B"` — explain which syllabus topic this connects to (monetary policy / banking regulation / financial system / national institutions / current affairs)
+- `"Key concepts to revise"` — a `ul` list of 4–6 specific banking/finance terms with brief definitions
+- `"Exam-ready data points"` — a `ul` list of numbers, dates, or thresholds from the article that examiners typically test
+
+Do NOT produce a body with empty strings or placeholder text. If RAW TEXT lacks enough substance for 4 sections, return `{"skip": true}`.

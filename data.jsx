@@ -11,104 +11,6 @@ const CATEGORIES = {
 // Articles — realistic RBI Grade B topics
 const ARTICLES = [
   {
-    id: "auto-2026-05-04-tvk-surge-may-trigger-shake-up",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "TVK surge may trigger shake-up in DMK, AIADMK",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/tamil-nadu/tvk-surge-may-trigger-shake-up-in-dmk-aiadmk-experts/articleshow/130808689.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-bjp-heavyweights-register-wins",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "BJP heavyweights register wins in Bengal",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/west-bengal/bjp-heavyweights-register-wins-in-bengal-some-big-names-stumble-despite-saffron-surge/articleshow/130806896.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-vijay-s-signature-strategy-tha",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "Vijay's signature strategy that powered TVK tsunami",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/tamil-nadu/tamil-nadu-election-result-vijay-tvk-win-dmk-lose-strategy-cadre-engineering-vijays-signature-strategy-powered-tamilaga-vettri-kazhagam-tsunami/articleshow/130776767.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-vs-babu-former-mla-defeats-sta",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "VS Babu, former MLA defeats Stalin in Kolathur",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/tamil-nadu/babu-former-mla-defeats-stalin-in-kolathur/articleshow/130806368.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-who-could-be-bjp-s-cm-face-in",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "Who could be BJP’s CM face in West Bengal?",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/west-bengal/bengal-election-results-2026-who-could-be-bjps-cm-face-in-west-bengal/articleshow/130759443.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-reliance-cuts-exports-of-alkyl",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "Reliance cuts exports of alkylates, boosts LPG output",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/industry/energy/oil-gas/reliance-cuts-exports-of-alkylates-boosts-lpg-output/articleshow/130804806.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
-    id: "auto-2026-05-04-a-bengali-founded-party-finall",
-    date: "2026-05-04",
-    category: "Economy",
-    title: "A Bengali-founded party finally eyes Bengal win",
-    summary: "",
-    readTime: 3,
-    concepts: [],
-    source: "https://economictimes.indiatimes.com/news/elections/assembly-elections/west-bengal/west-bengal-election-result-bjp-win-twist-of-history-will-the-baharatiya-janata-party-founded-by-a-bengali-shyama-prasad-mookherjee-win-west-bengal-vote/articleshow/130763589.cms",
-    body: [
-      { kind: "p", text: "" },
-    ],
-    mcqs: [],
-  },
-  {
     id: "a01",
     date: "2026-05-04",
     category: "MonetaryPlans",
@@ -241,8 +143,38 @@ const ARTICLES = [
     summary: "Revised DBU framework permits banks to offer wealth management, cross-border remittance, and offline retail CBDC at digital banking units.",
     readTime: 4,
     concepts: ["DBU", "CBDC", "Digital Banking", "Financial Inclusion"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "What is a Digital Banking Unit (DBU)?" },
+      { kind: "p", text: "A Digital Banking Unit is a specialised fixed-point business unit of a scheduled commercial bank that provides digital banking products in self-service or assisted mode. RBI issued DBU guidelines in April 2022. On Independence Day 2022, PM Modi inaugurated 75 DBUs across 75 districts as part of India@75 celebrations." },
+      { kind: "h2", text: "DBU Framework 2.0 — New Additions (May 2026)" },
+      { kind: "p", text: "The revised framework expands DBU service scope. Banks may now offer: (1) Wealth management products — mutual funds, insurance, bonds via assisted digital mode; (2) Cross-border remittances — MTSS and FEMA-compliant outward remittances; (3) Offline retail CBDC transactions using NFC chips — for areas with intermittent connectivity." },
+      { kind: "h2", text: "CBDC (e-Rupee) Integration" },
+      { kind: "p", text: "The e-Rupee (e₹) is India's Central Bank Digital Currency. RBI launched the e₹-R (retail) pilot in December 2022. It operates on a token-based model. Key exam points: e₹ is a direct RBI liability (like banknotes), not a bank deposit; it does not earn interest; settlement is final. DBU 2.0 makes DBUs CBDC distribution touchpoints — extending offline e₹ access to areas with poor connectivity." },
+      { kind: "h2", text: "Eligibility & Requirements" },
+      { kind: "ul", items: [
+        "Only domestic SCBs can open DBUs — RRBs, co-operative banks, LABs not eligible",
+        "No prior RBI permission needed — self-certified compliance with DBU guidelines",
+        "24x7 availability mandatory for core digital products",
+        "Separate Digital Banking Segment required for regulatory reporting",
+        "Minimum products: savings account, FD/RD, digital loans, UPI, netbanking enrolment",
+      ] },
+      { kind: "h2", text: "Grade B Exam Angle" },
+      { kind: "p", text: "DBUs connect to Financial Inclusion + Technology in Banking. The India Stack link is key: Aadhaar (identity) + PMJDY (account) + UPI (payment) + CBDC (digital currency) + DBU (distribution point). Examiners test: who is eligible to open DBUs, minimum services, and the CBDC link. The 75 DBUs in 2022 and their phygital nature (physical location + digital transaction) are standard data points." },
+    ],
+    mcqs: [
+      {
+        q: "Digital Banking Units (DBUs) were inaugurated on a large scale in India on:",
+        options: ["Republic Day 2022", "Independence Day 2022", "Financial Inclusion Day 2023", "RBI Foundation Day 2022"],
+        answer: 1,
+        explain: "PM Modi inaugurated 75 DBUs on Independence Day (August 15) 2022 in 75 districts. Guidelines were issued in April 2022."
+      },
+      {
+        q: "e-Rupee (CBDC-Retail) is best described as:",
+        options: ["A RBI liability earning interest like savings deposit", "A RBI liability not earning interest, with final real-time settlement", "A bank deposit backed by government securities", "A private stablecoin regulated by SEBI"],
+        answer: 1,
+        explain: "e₹ is a direct RBI liability like banknotes. It does not earn interest, settlement is final and real-time. Banks are distributors, not issuers."
+      },
+    ],
   },
   {
     id: "a07",
@@ -252,8 +184,38 @@ const ARTICLES = [
     summary: "State Bank of India raises ₹15,000 crore through 15-year Basel-III compliant Tier-2 bonds, 4x oversubscribed at coupon of 7.42%.",
     readTime: 3,
     concepts: ["Tier-2 Capital", "Basel III", "AT1 vs T2", "Capital Adequacy"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "What Happened" },
+      { kind: "p", text: "State Bank of India (SBI) raised ₹15,000 crore through 15-year Basel-III compliant Tier-2 bonds in May 2026. The issue was oversubscribed 4x with bids totalling ₹60,000 crore received from insurance companies, pension funds, and mutual funds. The coupon was fixed at 7.42% per annum. The bonds were listed on BSE and NSE." },
+      { kind: "h2", text: "Basel III Capital Tiers — Exam Foundation" },
+      { kind: "p", text: "Basel III (implemented in India from April 2013, fully phased in by March 2019) requires banks to hold capital against Risk-Weighted Assets (RWA). The hierarchy is: CET-1 (common equity) → AT-1 (perpetual bonds) → Tier-2 (dated subordinated bonds). Understanding SBI's Tier-2 issuance requires knowing all three layers." },
+      { kind: "h2", text: "Capital Structure Under Basel III (India)" },
+      { kind: "ul", items: [
+        "CET-1 (Common Equity Tier-1): equity shares + retained earnings; minimum 5.5% of RWA",
+        "AT-1 (Additional Tier-1): perpetual bonds with discretionary coupon; loss absorption trigger at CET-1 < 6.125%; minimum 1.5%",
+        "Tier-1 Capital = CET-1 + AT-1; minimum 7% of RWA",
+        "Tier-2 Capital: dated subordinated bonds (≥5 year maturity) + loan-loss provisions; minimum 2%",
+        "Total CRAR minimum: 11.5% including 2.5% Capital Conservation Buffer (CCB)",
+      ] },
+      { kind: "h2", text: "AT-1 vs Tier-2 — Most-Tested Difference" },
+      { kind: "p", text: "AT-1 bonds are perpetual (no maturity) with non-cumulative discretionary coupons. If CET-1 falls below 6.125% or viability is threatened, coupons can be skipped and principal written down or converted to equity (bail-in). Tier-2 bonds (like SBI's 15-year issue) have a defined maturity and fixed coupon, but rank subordinate to depositors and senior creditors in liquidation. Both are bail-in instruments under RBI's resolution framework." },
+      { kind: "h2", text: "D-SIBs and Capital Surcharge" },
+      { kind: "p", text: "SBI is a Domestic Systemically Important Bank (D-SIB) — classified in Bucket 3 of RBI's D-SIB framework, requiring an additional 0.45% CET-1 surcharge over the standard CRAR. Other D-SIBs: HDFC Bank (Bucket 1, 0.20% surcharge), ICICI Bank (Bucket 1, 0.20% surcharge). D-SIBs are 'too big to fail' institutions with higher capital, resolution, and disclosure requirements." },
+    ],
+    mcqs: [
+      {
+        q: "Under Basel III, the minimum Total Capital Adequacy Ratio (CRAR) for Indian banks including the Capital Conservation Buffer is:",
+        options: ["9.0%", "10.5%", "11.5%", "12.0%"],
+        answer: 2,
+        explain: "India requires 11.5% CRAR: 9% minimum (RBI adds 0.5% over Basel's 8%) + 2.5% Capital Conservation Buffer (CCB). D-SIBs face an additional 0.20-0.80% CET-1 surcharge."
+      },
+      {
+        q: "AT-1 bonds differ from Tier-2 bonds primarily because AT-1 bonds are:",
+        options: ["Dated with fixed maturity and guaranteed coupon", "Perpetual with discretionary coupon and write-down/conversion trigger", "Senior secured debt eligible for deposit insurance", "Issued only by PSU banks under government mandate"],
+        answer: 1,
+        explain: "AT-1 bonds are perpetual (no maturity), coupons are discretionary (skippable), and contain a loss-absorption trigger — written down or converted to equity if CET-1 < 6.125%."
+      },
+    ],
   },
   {
     id: "a08",
@@ -263,8 +225,40 @@ const ARTICLES = [
     summary: "Headline CPI inflation at 4.1% in April 2026 vs 4.6% in March, driven by 220 bps drop in vegetable inflation. Core inflation sticky at 4.4%.",
     readTime: 4,
     concepts: ["CPI", "Core Inflation", "Food Inflation", "Base Effect"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "April 2026 Headline Data" },
+      { kind: "p", text: "India's CPI inflation for April 2026 came in at 4.1%, down from 4.6% in March 2026 (MoSPI data). This is the second consecutive month within RBI's 4% target. Core CPI (excluding food and fuel) remained sticky at 4.4% — marginally up from 4.3% in March — driven by services inflation in health, education, and personal care segments." },
+      { kind: "h2", text: "Component-wise Breakdown" },
+      { kind: "ul", items: [
+        "Headline CPI: 4.1% (April) vs 4.6% (March) — 50 bps fall",
+        "Food & Beverages (45.86% weight in CPI basket): 3.8% — down sharply from 5.1%",
+        "Vegetables: 2.4% — plummeted from 7.2%; rabi harvest arrivals in market",
+        "Pulses: 6.1% — still elevated due to structural supply constraints",
+        "Fuel & Light (6.84% weight): -0.8% — deflation; LPG price cuts in March helped",
+        "Core CPI: ~4.4% — sticky; services sector inflation persistent",
+        "WPI inflation: 1.8% (April) — wholesale prices remain benign",
+      ] },
+      { kind: "h2", text: "Base Effect Explained" },
+      { kind: "p", text: "The sharp fall in food inflation is partly a base effect. April 2025 had abnormally high vegetable prices due to heat-wave-related crop damage. With a high base from last year, even stable prices this April translate to lower YoY inflation. Aspirants must distinguish between structural disinflation (genuine price stability) and base-effect disinflation (mathematical artifact). RBI's monetary policy is more concerned with structural core inflation than base-effect headline moves." },
+      { kind: "h2", text: "CPI Methodology — Grade B Must-Know" },
+      { kind: "p", text: "CPI in India is compiled by MoSPI using 2012 as base year. It covers all-India urban and rural consumers. CPI(IW) — Industrial Workers — with base year 2016, is used for DA revisions for government employees. CPI(AL/RL) — Agricultural/Rural Labourers — is used for minimum wage determination. The RBI's inflation target uses 'CPI Combined' (urban + rural weighted average)." },
+      { kind: "h2", text: "Implications for Monetary Policy" },
+      { kind: "p", text: "With headline CPI at 4.1% — at the target midpoint — the MPC has some comfort. However, sticky core at 4.4% prevents an imminent rate cut. RBI projects headline CPI at 4.3% for FY27. A cut would require: (1) core CPI trending below 4.2%, (2) global commodity prices remaining benign, (3) monsoon outlook stable. Current policy stance is 'neutral' — data-dependent rate trajectory." },
+    ],
+    mcqs: [
+      {
+        q: "Which CPI series is used by the RBI for its inflation targeting framework?",
+        options: ["CPI (Industrial Workers) — base 2016", "CPI (Agricultural Labourers)", "CPI (Combined — Urban + Rural) — base 2012", "WPI — Wholesale Price Index"],
+        answer: 2,
+        explain: "RBI uses CPI (Combined) with base year 2012 for its 4% (+/- 2%) inflation targeting mandate. CPI(IW) is for DA revision; CPI(AL/RL) for minimum wages."
+      },
+      {
+        q: "'Base effect' in inflation statistics refers to:",
+        options: ["The floor of the LAF corridor", "The impact of abnormal price levels in the comparable period last year on current YoY inflation", "The CPI base year used for index construction", "The anchor effect of inflation expectations"],
+        answer: 1,
+        explain: "Base effect is the statistical distortion in YoY inflation caused by unusually high or low prices in the same month last year. High base last April (heat-wave vegetables) makes current YoY inflation appear lower."
+      },
+    ],
   },
   {
     id: "a09",
@@ -274,8 +268,45 @@ const ARTICLES = [
     summary: "IMF April WEO update revises global growth up by 10 bps to 2.8%; advanced economies at 1.6%, EMDEs at 4.2%. India retained at 6.8%.",
     readTime: 3,
     concepts: ["IMF", "WEO", "Global Growth", "EMDE"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "IMF WEO April 2026 — Key Numbers" },
+      { kind: "p", text: "The IMF released its April 2026 World Economic Outlook (WEO) Update, revising global growth up by 10 basis points to 2.8% for 2026. Advanced Economies are projected at 1.6%; Emerging Market and Developing Economies (EMDEs) at 4.2%. India's forecast is retained at 6.8% for FY27 — the fastest-growing major economy." },
+      { kind: "h2", text: "Country & Region Breakdown" },
+      { kind: "ul", items: [
+        "Global: 2.8% (up 10 bps from Jan 2026 WEO)",
+        "India: 6.8% FY27 — fastest growing G20 economy",
+        "China: 4.6% — exports support but property sector drag persists",
+        "USA: 1.8% — still-elevated rates slowing housing and capex",
+        "Euro Area: 1.2% — weak German industry, energy adjustment ongoing",
+        "Japan: 0.7% — demographic headwinds, weak domestic demand",
+        "ASEAN-5: 4.5%",
+      ] },
+      { kind: "h2", text: "IMF vs World Bank — Bretton Woods Twins" },
+      { kind: "p", text: "Both the IMF and World Bank were created at the Bretton Woods Conference (1944), headquartered in Washington DC. Key distinction: IMF is a monetary institution — exchange rates, balance of payments, short-term stabilisation. World Bank is a development institution — long-term project lending, poverty reduction. IMF publications: WEO + GFSR (Global Financial Stability Report) + Fiscal Monitor. World Bank: WDR (World Development Report) + GEP (Global Economic Prospects)." },
+      { kind: "h2", text: "WEO Publication Schedule" },
+      { kind: "ul", items: [
+        "Full WEO: April and October (detailed country analysis)",
+        "WEO Update: January and July (shorter revision note)",
+        "GFSR and Fiscal Monitor published alongside April/October WEO",
+        "India's fiscal year (April-March) differs from IMF's calendar year — check which period applies",
+      ] },
+      { kind: "h2", text: "IMF's Concerns for India" },
+      { kind: "p", text: "While retaining the 6.8% forecast, IMF flagged: (1) global spillover risks from US monetary policy tightening affecting capital flows to India; (2) rupee volatility from oil import costs; (3) need for fiscal consolidation post-election cycle spending. IMF's Article IV consultation report for India provides granular sovereign risk assessment — frequently cited in Grade B descriptive papers." },
+    ],
+    mcqs: [
+      {
+        q: "The IMF's World Economic Outlook (WEO) is published:",
+        options: ["Once a year in April", "Twice a year (April & October) with updates in January & July", "Quarterly", "Only when global recession risks exceed 25%"],
+        answer: 1,
+        explain: "Full WEO: April and October. WEO Updates: January and July. Fiscal Monitor and GFSR also published biannually alongside WEO in April and October."
+      },
+      {
+        q: "Which of the following correctly distinguishes the IMF from the World Bank?",
+        options: ["IMF provides long-term development loans; World Bank provides BOP stabilisation", "IMF focuses on monetary/BOP stability; World Bank on development lending and poverty reduction", "IMF is a UN agency for developed nations; World Bank for developing nations", "IMF is headquartered in New York; World Bank in Washington DC"],
+        answer: 1,
+        explain: "IMF = monetary institution (BOP, exchange rate, short-term stabilisation). World Bank = development institution (project loans, poverty). Both headquartered in Washington DC, created at Bretton Woods 1944."
+      },
+    ],
   },
   {
     id: "a10",
@@ -285,8 +316,38 @@ const ARTICLES = [
     summary: "RBI increases the automatic-route ECB ceiling from $750m to $1.5bn per financial year per borrower, simplifies all-in-cost benchmarks.",
     readTime: 4,
     concepts: ["ECB", "External Commercial Borrowing", "Automatic Route", "All-in-Cost"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "What Changed in ECB Framework" },
+      { kind: "p", text: "The Reserve Bank of India revised its External Commercial Borrowings (ECB) framework in May 2026, raising the automatic-route borrowing ceiling from $750 million to $1.5 billion per financial year per eligible borrower. This is the first major ECB revision since 2019. All-in-cost (AIC) benchmarks were simplified and fully transitioned to Term SOFR (phasing out remaining LIBOR-linked provisions after LIBOR's June 2023 discontinuation)." },
+      { kind: "h2", text: "What is an ECB?" },
+      { kind: "p", text: "ECBs are commercial loans raised by Indian entities from foreign lenders — international banks, capital markets, multilateral financial institutions, and export credit agencies. Governed by RBI's ECB Master Direction under FEMA 1999. ECBs allow Indian entities to diversify funding and access forex capital, typically at lower rates than domestic borrowing, while exposing them to currency risk." },
+      { kind: "h2", text: "ECB Routes and Tracks" },
+      { kind: "ul", items: [
+        "Automatic Route: no prior RBI approval; file Form ECB for LRN post-disbursement; now capped at $1.5bn/FY",
+        "Approval Route: prior RBI approval needed; for ineligible entities or above-cap amounts",
+        "Track I: Medium-term FCY ECBs — min avg maturity 3 years; manufacturing, infrastructure",
+        "Track II: Long-term FCY ECBs — min avg maturity 10 years; broader end-use eligibility",
+        "Track III: INR-denominated ECBs (Masala Bonds) — currency risk borne by lender",
+      ] },
+      { kind: "h2", text: "All-in-Cost (AIC) Ceiling" },
+      { kind: "p", text: "AIC is the total cost to the borrower — interest + fees + charges. RBI prescribes maximum AIC to prevent excessively costly offshore borrowing. Under the revised framework, AIC is benchmarked to Term SOFR + credit spread. For example, Track I ECBs with 3-5 year maturity: AIC ≤ Term SOFR + 350 bps. The shift to SOFR aligns India with the global benchmark transition — LIBOR was discontinued in June 2023." },
+      { kind: "h2", text: "Macroeconomic Link — Why This Matters" },
+      { kind: "p", text: "Raising the automatic-route ceiling signals RBI's comfort with corporate external debt and intent to attract forex inflows supporting the current account deficit (CAD). India's CAD for FY26 was ~1.6% of GDP. ECBs are a key component of the capital account — alongside FDI and FPI. Exam connects ECB policy to exchange rate management: increased ECB inflows → dollar supply → rupee appreciation pressure → forex reserve build-up." },
+    ],
+    mcqs: [
+      {
+        q: "ECBs in India are governed by which legislation?",
+        options: ["RBI Act 1934", "Banking Regulation Act 1949", "Foreign Exchange Management Act (FEMA) 1999", "SEBI Act 1992"],
+        answer: 2,
+        explain: "ECBs are capital account transactions governed under FEMA 1999. RBI issues ECB Master Direction under FEMA. FEMA replaced FERA (Foreign Exchange Regulation Act) in 1999."
+      },
+      {
+        q: "Which benchmark replaced USD LIBOR for ECB all-in-cost calculations in India?",
+        options: ["MIBOR", "EONIA", "Term SOFR", "EURIBOR"],
+        answer: 2,
+        explain: "Term SOFR (Secured Overnight Financing Rate) replaced USD LIBOR as the global dollar benchmark after LIBOR's discontinuation in June 2023. RBI updated ECB AIC benchmarks accordingly."
+      },
+    ],
   },
   {
     id: "a11",
@@ -296,8 +357,39 @@ const ARTICLES = [
     summary: "Pradhan Mantri Jan Dhan Yojana hits 55 crore beneficiaries on its 12th anniversary. 56% account holders are women; ₹2.6 lakh crore in deposits.",
     readTime: 3,
     concepts: ["PMJDY", "Financial Inclusion", "RuPay", "BSBDA"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "Milestone Numbers (May 2026)" },
+      { kind: "p", text: "Pradhan Mantri Jan Dhan Yojana (PMJDY), launched on August 28, 2014, crossed 55 crore (550 million) beneficiary accounts. Total deposits stand at ₹2.6 lakh crore. 56% of account holders are women. Over 34 crore RuPay debit cards issued. 67% of accounts are in rural and semi-urban areas." },
+      { kind: "h2", text: "PMJDY Key Features — Complete Reference" },
+      { kind: "ul", items: [
+        "Account type: Basic Savings Bank Deposit Account (BSBDA) — zero balance, no minimum",
+        "Overdraft: ₹10,000 (revised from ₹5,000 in 2018); available after 6 months; one per household; only earning adult",
+        "RuPay Debit Card: free of cost; ₹2 lakh accidental death/disability insurance cover",
+        "Life insurance: ₹30,000 for accounts opened before January 31, 2015",
+        "DBT backbone: LPG subsidy, MGNREGA wages, PM-KISAN, scholarships transferred directly",
+        "Aadhaar seeding: mandatory for DBT; eliminates ghost/duplicate beneficiaries",
+      ] },
+      { kind: "h2", text: "BSBDA vs Regular Savings Account" },
+      { kind: "p", text: "A BSBDA is the RBI-mandated no-frills account under Section 10 of BR Act. No minimum balance required. Limited to 4 withdrawals per month (any mode). Banks cannot charge maintenance fees or non-maintenance penalty. Any Indian resident (including minors ≥10 years supervised by guardian) can open one. A person cannot hold both a BSBDA and a regular savings account simultaneously — must convert or close one within 30 days." },
+      { kind: "h2", text: "Financial Inclusion Architecture" },
+      { kind: "p", text: "PMJDY is the foundation layer of India's financial inclusion stack. The three pillars: Banking (PMJDY) → Credit (MUDRA, SHG-Bank Linkage, CGFMU) → Insurance & Pension (PMJJBY, PMSBY, APY). India Stack: Aadhaar (identity) + PMJDY (account) + UPI (payment) + DigiLocker (documents) + CBDC (digital currency). PMJDY accounts also serve as gateway to: PM Jeevan Jyoti Bima Yojana (PMJJBY), PM Suraksha Bima Yojana (PMSBY), and Atal Pension Yojana (APY)." },
+      { kind: "h2", text: "Grade B Exam Traps" },
+      { kind: "p", text: "Common exam mistakes: (1) Launch date — August 28, 2014 (announced Aug 15 from Red Fort, operationally launched Aug 28); (2) Overdraft is ₹10,000 not ₹5,000 (revised 2018); (3) Accident cover is ₹2 lakh from RuPay card (not ₹1 lakh); (4) 56% women account holders — financial inclusion and gender equity angle; (5) BSBDA allows only 4 withdrawals/month — a frequently tested operational detail." },
+    ],
+    mcqs: [
+      {
+        q: "PMJDY was launched on:",
+        options: ["26 January 2014", "28 August 2014", "15 August 2013", "1 April 2015"],
+        answer: 1,
+        explain: "PMJDY was launched on August 28, 2014 (announced from Red Fort on August 15, 2014). It set a Guinness World Record — 1.8 crore accounts opened in a single day on launch date."
+      },
+      {
+        q: "The maximum overdraft facility under PMJDY (post-2018 revision) is:",
+        options: ["₹5,000", "₹7,500", "₹10,000", "₹15,000"],
+        answer: 2,
+        explain: "The overdraft limit was doubled from ₹5,000 to ₹10,000 in 2018. Available to one earning adult per household after the account has been active for 6 months with satisfactory conduct."
+      },
+    ],
   },
   {
     id: "a12",
@@ -307,8 +399,45 @@ const ARTICLES = [
     summary: "HDFC Bank reports Q4 FY26 net profit of ₹17,612 crore, up 18% YoY. NIM at 3.5%; GNPA improves to 1.2%.",
     readTime: 3,
     concepts: ["NIM", "Q4 Results", "GNPA", "Cost-to-Income"],
-    body: [{ kind: "p", text: "..." }],
-    mcqs: [],
+    body: [
+      { kind: "h2", text: "Q4 FY26 Results Snapshot" },
+      { kind: "p", text: "HDFC Bank reported a net profit of ₹17,612 crore for Q4 FY26, up 18% Year-on-Year. Net Interest Income (NII) grew 10% YoY to ₹31,960 crore. Net Interest Margin (NIM) was 3.5% — stable sequentially but compressed from 3.7% in Q4 FY25, reflecting competitive deposit pricing. Gross NPA improved to 1.2% (from 1.4% a year ago) and Net NPA to 0.4%, indicating strong asset quality recovery post the HDFC-HDFC Bank merger cycle." },
+      { kind: "h2", text: "Key Metrics — Quick Reference" },
+      { kind: "ul", items: [
+        "Net Profit: ₹17,612 crore | +18% YoY",
+        "Net Interest Income (NII): ₹31,960 crore | +10% YoY",
+        "Net Interest Margin (NIM): 3.5% (down from 3.7% in Q4 FY25)",
+        "GNPA ratio: 1.2% (improved from 1.4% YoY)",
+        "Net NPA ratio: 0.4% (improved from 0.6% YoY)",
+        "Capital Adequacy Ratio (CRAR): 18.8% (vs 11.5% minimum)",
+        "Return on Assets (RoA): 1.9% | Return on Equity (RoE): 16.2%",
+      ] },
+      { kind: "h2", text: "Understanding NIM — Net Interest Margin" },
+      { kind: "p", text: "NIM = (Interest Income − Interest Expense) / Average Earning Assets. It measures how profitably a bank deploys its interest-earning assets. A NIM of 3.5% means the bank earns ₹3.50 for every ₹100 of earning assets after paying depositors. NIM compression occurs when deposit rates rise faster than lending rates — as happened in FY26 when competition for deposits intensified. For Grade B: higher NIM = better spread income, but excessively high NIM can signal risk concentration." },
+      { kind: "h2", text: "Understanding GNPA, Net NPA & PCR" },
+      { kind: "p", text: "Gross NPA = total value of non-performing loans (overdue > 90 days) before provisioning. Net NPA = GNPA minus provisions already set aside. Provisioning Coverage Ratio (PCR) = Provisions / GNPA × 100. HDFC Bank's PCR is ~75% — for every ₹100 of bad loans, ₹75 is already provisioned. High PCR reflects conservative risk management. RBI's SARFAESI Act 2002 and Debt Recovery Tribunals (DRTs) are the key NPA recovery mechanisms." },
+      { kind: "h2", text: "NPA Classification (Must-Know for Grade B)" },
+      { kind: "ul", items: [
+        "Standard Asset: performing; 0.25-0.40% countercyclical provision",
+        "Sub-standard NPA: overdue > 90 days, up to 12 months; 15% provision",
+        "Doubtful NPA: sub-standard for > 12 months; 25-100% provision (by age cohort)",
+        "Loss Asset: irrecoverable; 100% provision or written off",
+      ] },
+    ],
+    mcqs: [
+      {
+        q: "Net Interest Margin (NIM) is calculated as:",
+        options: ["Net profit / Total assets", "(Interest income - Interest expense) / Average earning assets", "Net NPA / Gross NPA × 100", "Operating profit / Net interest income"],
+        answer: 1,
+        explain: "NIM = (Interest Income - Interest Expense) / Average Earning Assets. It measures the net spread a bank earns on its interest-bearing portfolio — the core profitability metric for commercial banks."
+      },
+      {
+        q: "Provisioning Coverage Ratio (PCR) is computed as:",
+        options: ["Net NPA / Gross NPA", "Provisions for NPAs / Gross NPA × 100", "Capital / Risk-weighted assets", "Gross NPA / Total advances × 100"],
+        answer: 1,
+        explain: "PCR = (Provisions held for NPAs / Gross NPA) × 100. PCR of 75% means 75% of gross NPAs are covered by provisions. RBI's guidance for D-SIBs is minimum 70% PCR."
+      },
+    ],
   },
   {
     id: "bt01",
