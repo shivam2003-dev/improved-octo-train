@@ -1,11 +1,11 @@
-// Sample content for RBI Grade B Current Affairs Archive
-// Categories with color coding
+// RBI Grade B General Awareness — 6 syllabus categories
 const CATEGORIES = {
-  RBI:      { label: "RBI",      color: "#2C5F8D", bg: "#E8F0F7", ink: "#1A3F5C" },
-  Banking:  { label: "Banking",  color: "#1F7A6C", bg: "#E4F1EE", ink: "#13524A" },
-  Economy:  { label: "Economy",  color: "#2E7D4F", bg: "#E6F2EA", ink: "#1B5232" },
-  Reports:  { label: "Reports",  color: "#6B4C9A", bg: "#EFEAF6", ink: "#46326B" },
-  Schemes:  { label: "Schemes",  color: "#B8612A", bg: "#F7EBDD", ink: "#7A3F18" },
+  CurrentAffairs:       { label: "Current Affairs",      color: "#D4A04A", bg: "#F3E5C2", ink: "#5C4116" },
+  FinancialSystems:     { label: "Indian Financial Systems", color: "#2C5F8D", bg: "#E8F0F7", ink: "#1A3F5C" },
+  BankingSystems:       { label: "Indian Banking Systems",  color: "#1F7A6C", bg: "#E4F1EE", ink: "#13524A" },
+  MonetaryPlans:        { label: "Monetary Plans",         color: "#2E7D4F", bg: "#E6F2EA", ink: "#1B5232" },
+  NationalInstitutions: { label: "National Institutions",  color: "#6B4C9A", bg: "#EFEAF6", ink: "#46326B" },
+  BankingTerms:         { label: "Banking Terms",          color: "#B8612A", bg: "#F7EBDD", ink: "#7A3F18" },
 };
 
 // Articles — realistic RBI Grade B topics
@@ -111,7 +111,7 @@ const ARTICLES = [
   {
     id: "a01",
     date: "2026-05-04",
-    category: "RBI",
+    category: "MonetaryPlans",
     title: "MPC holds repo rate at 6.25%, signals neutral stance amid sticky core inflation",
     summary: "The Monetary Policy Committee voted 5–1 to maintain the policy repo rate at 6.25%, citing persistent core inflation despite headline CPI easing to 4.1% in April. Governor flagged transmission lags and global commodity volatility.",
     readTime: 6,
@@ -149,7 +149,7 @@ const ARTICLES = [
   {
     id: "a02",
     date: "2026-05-04",
-    category: "Banking",
+    category: "BankingSystems",
     title: "Gross NPAs of scheduled commercial banks fall to 2.4% — multi-decade low",
     summary: "RBI's Financial Stability Report shows GNPA ratio of SCBs declined to 2.4% in March 2026, the lowest since 2011. Net NPA at 0.5%; PCR strengthens to 76.8%.",
     readTime: 5,
@@ -179,7 +179,7 @@ const ARTICLES = [
   {
     id: "a03",
     date: "2026-05-04",
-    category: "Economy",
+    category: "CurrentAffairs",
     title: "India's Q4 GDP growth pegged at 7.2%; full-year FY26 likely 7.0%",
     summary: "NSO advance estimates show real GDP growth of 7.2% in Q4 FY26, led by manufacturing (8.1%) and construction (9.4%). Private consumption recovers to 6.8%.",
     readTime: 4,
@@ -200,7 +200,7 @@ const ARTICLES = [
   {
     id: "a04",
     date: "2026-05-04",
-    category: "Reports",
+    category: "NationalInstitutions",
     title: "World Bank's Global Economic Prospects: India to grow 6.7% in 2026",
     summary: "World Bank's June GEP report retains India's 2026 growth forecast at 6.7%, calls it 'the bright spot' in an otherwise subdued global landscape (2.5% world growth).",
     readTime: 3,
@@ -218,7 +218,7 @@ const ARTICLES = [
   {
     id: "a05",
     date: "2026-05-04",
-    category: "Schemes",
+    category: "CurrentAffairs",
     title: "PM Vidyalaxmi expanded: collateral-free education loans up to ₹10 lakh",
     summary: "Cabinet approves expansion of PM Vidyalaxmi scheme — collateral-free, guarantor-free loans up to ₹10 lakh for higher education at 860 quality institutions.",
     readTime: 3,
@@ -236,7 +236,7 @@ const ARTICLES = [
   {
     id: "a06",
     date: "2026-05-03",
-    category: "RBI",
+    category: "FinancialSystems",
     title: "RBI introduces unified Digital Banking Units (DBU) framework 2.0",
     summary: "Revised DBU framework permits banks to offer wealth management, cross-border remittance, and offline retail CBDC at digital banking units.",
     readTime: 4,
@@ -247,7 +247,7 @@ const ARTICLES = [
   {
     id: "a07",
     date: "2026-05-03",
-    category: "Banking",
+    category: "BankingSystems",
     title: "SBI raises ₹15,000 crore via Tier-2 bonds at 7.42%",
     summary: "State Bank of India raises ₹15,000 crore through 15-year Basel-III compliant Tier-2 bonds, 4x oversubscribed at coupon of 7.42%.",
     readTime: 3,
@@ -258,7 +258,7 @@ const ARTICLES = [
   {
     id: "a08",
     date: "2026-05-02",
-    category: "Economy",
+    category: "CurrentAffairs",
     title: "April CPI inflation eases to 4.1%; food inflation moderates sharply",
     summary: "Headline CPI inflation at 4.1% in April 2026 vs 4.6% in March, driven by 220 bps drop in vegetable inflation. Core inflation sticky at 4.4%.",
     readTime: 4,
@@ -269,7 +269,7 @@ const ARTICLES = [
   {
     id: "a09",
     date: "2026-05-02",
-    category: "Reports",
+    category: "NationalInstitutions",
     title: "IMF World Economic Outlook update: global growth at 2.8% for 2026",
     summary: "IMF April WEO update revises global growth up by 10 bps to 2.8%; advanced economies at 1.6%, EMDEs at 4.2%. India retained at 6.8%.",
     readTime: 3,
@@ -280,7 +280,7 @@ const ARTICLES = [
   {
     id: "a10",
     date: "2026-05-01",
-    category: "RBI",
+    category: "FinancialSystems",
     title: "RBI eases ECB framework: aggregate cap raised to $1.5 billion per borrower",
     summary: "RBI increases the automatic-route ECB ceiling from $750m to $1.5bn per financial year per borrower, simplifies all-in-cost benchmarks.",
     readTime: 4,
@@ -291,7 +291,7 @@ const ARTICLES = [
   {
     id: "a11",
     date: "2026-05-01",
-    category: "Schemes",
+    category: "CurrentAffairs",
     title: "PMJDY crosses 55 crore accounts; deposit balance at ₹2.6 lakh crore",
     summary: "Pradhan Mantri Jan Dhan Yojana hits 55 crore beneficiaries on its 12th anniversary. 56% account holders are women; ₹2.6 lakh crore in deposits.",
     readTime: 3,
@@ -302,13 +302,167 @@ const ARTICLES = [
   {
     id: "a12",
     date: "2026-04-30",
-    category: "Banking",
+    category: "BankingSystems",
     title: "HDFC Bank Q4 net profit rises 18% YoY to ₹17,612 crore",
     summary: "HDFC Bank reports Q4 FY26 net profit of ₹17,612 crore, up 18% YoY. NIM at 3.5%; GNPA improves to 1.2%.",
     readTime: 3,
     concepts: ["NIM", "Q4 Results", "GNPA", "Cost-to-Income"],
     body: [{ kind: "p", text: "..." }],
     mcqs: [],
+  },
+  {
+    id: "bt01",
+    date: "2026-05-04",
+    category: "BankingTerms",
+    title: "Key Banking Terms: CRR, SLR, SDF, MSF, Bank Rate — explained",
+    summary: "A concise reference for Grade B aspirants covering the most-tested RBI instrument rates — Cash Reserve Ratio, Statutory Liquidity Ratio, Standing Deposit Facility, Marginal Standing Facility, and Bank Rate.",
+    readTime: 7,
+    concepts: ["CRR", "SLR", "SDF", "MSF", "Bank Rate", "LAF", "NDTL"],
+    body: [
+      { kind: "h2", text: "Cash Reserve Ratio (CRR)" },
+      { kind: "p", text: "CRR is the minimum percentage of a bank's Net Demand and Time Liabilities (NDTL) that must be held as cash with the RBI. Currently 4%. No interest is paid on CRR balances. RBI uses it as a monetary tool — raising CRR drains liquidity; cutting it injects liquidity." },
+      { kind: "h2", text: "Statutory Liquidity Ratio (SLR)" },
+      { kind: "p", text: "SLR is the minimum percentage of NDTL a bank must maintain in specified liquid assets — approved government securities (G-secs, T-bills, SDLs). Currently 18%. Banks holding SLR securities earn sovereign yields, unlike CRR." },
+      { kind: "h2", text: "Standing Deposit Facility (SDF)" },
+      { kind: "p", text: "Introduced in April 2022 as the LAF corridor's floor, replacing the fixed-rate reverse repo. Banks park excess liquidity with RBI at the SDF rate (currently 6.00%) without receiving any collateral — making it an uncollateralised absorption window. Key exam point: SDF absorbs liquidity without depleting RBI's stock of G-secs." },
+      { kind: "h2", text: "Marginal Standing Facility (MSF)" },
+      { kind: "p", text: "MSF is the emergency borrowing window above the repo rate — currently 6.50% (Repo + 25 bps). Banks can borrow overnight against excess SLR holdings. It forms the ceiling of the LAF corridor." },
+      { kind: "h2", text: "Bank Rate" },
+      { kind: "p", text: "The rate at which RBI lends long-term funds to banks (without collateral). Currently aligned to MSF at 6.50%. Used as the benchmark for penalties on shortfall in CRR/SLR maintenance." },
+      { kind: "h2", text: "LAF Corridor Summary" },
+      { kind: "ul", items: [
+        "Floor: SDF Rate — 6.00% (absorption, uncollateralised)",
+        "Policy Rate: Repo Rate — 6.25% (collateralised overnight lending)",
+        "Ceiling: MSF Rate — 6.50% (emergency window, SLR collateral)",
+        "Corridor width: 50 bps (SDF to MSF)",
+      ] },
+    ],
+    mcqs: [
+      {
+        q: "Which of the following is NOT an interest-earning instrument for banks?",
+        options: ["SLR securities", "CRR balance with RBI", "G-secs held in HTM", "SDL bonds"],
+        answer: 1,
+        explain: "RBI pays no interest on CRR balances. SLR instruments (G-secs, SDLs) earn coupon income."
+      },
+      {
+        q: "The SDF rate is always:",
+        options: ["25 bps above Repo Rate", "Equal to Repo Rate", "25 bps below Repo Rate", "Equal to Reverse Repo Rate"],
+        answer: 2,
+        explain: "SDF = Repo Rate − 25 bps. It forms the floor of the LAF corridor at 6.00% when Repo is 6.25%."
+      },
+    ],
+  },
+  {
+    id: "bt02",
+    date: "2026-05-03",
+    category: "BankingTerms",
+    title: "Priority Sector Lending (PSL): targets, sub-targets and adjusted net bank credit",
+    summary: "PSL mandates banks to lend 40% of ANBC to priority sectors — agriculture, MSMEs, education, housing and weaker sections. Non-compliance attracts RIDF/SEDF contribution.",
+    readTime: 5,
+    concepts: ["PSL", "ANBC", "RIDF", "Agriculture Sub-target", "MSMEs", "Weaker Sections"],
+    body: [
+      { kind: "h2", text: "What is Priority Sector Lending?" },
+      { kind: "p", text: "PSL is the RBI directive requiring banks to channel a minimum portion of credit to sectors deemed developmentally important. The master direction targets are set as a % of Adjusted Net Bank Credit (ANBC) or Credit Equivalent of Off-Balance Sheet Exposures (CEOBE), whichever is higher." },
+      { kind: "h2", text: "Key PSL Targets" },
+      { kind: "ul", items: [
+        "Overall PSL: 40% of ANBC for domestic commercial banks",
+        "Agriculture: 18% (of which 10% to small & marginal farmers)",
+        "Micro enterprises: 7.5%",
+        "Advances to weaker sections: 12%",
+        "Foreign banks (>20 branches): 40% with sub-targets; (<20 branches): 40% with relaxed sub-targets",
+      ] },
+      { kind: "h2", text: "Shortfall & RIDF" },
+      { kind: "p", text: "Banks failing to meet PSL targets must deposit the shortfall amount in funds like the Rural Infrastructure Development Fund (RIDF) maintained with NABARD, or similar funds (SEDF, MSME fund). These deposits earn below-market interest — effectively a penalty." },
+    ],
+    mcqs: [
+      {
+        q: "What is the overall PSL target for domestic scheduled commercial banks as a % of ANBC?",
+        options: ["32%", "36%", "40%", "45%"],
+        answer: 2,
+        explain: "Domestic SCBs must lend 40% of ANBC (or CEOBE, whichever is higher) to priority sectors under RBI's master direction."
+      },
+      {
+        q: "Banks failing to meet PSL targets deposit the shortfall in:",
+        options: ["NDF maintained with RBI", "RIDF maintained with NABARD", "SIDBI special fund", "RBI Priority Sector Fund"],
+        answer: 1,
+        explain: "Shortfalls are deposited in RIDF (for agriculture shortfall) or SEDF/MSME-SIDBI fund, maintained with NABARD/SIDBI at below-market rates."
+      },
+    ],
+  },
+  {
+    id: "fs01",
+    date: "2026-05-02",
+    category: "FinancialSystems",
+    title: "Indian Financial System: structure, regulators and their mandates",
+    summary: "Overview of India's financial system — four key segments (banking, securities markets, insurance, pension), their regulators (RBI, SEBI, IRDAI, PFRDA) and the overarching FSDC.",
+    readTime: 8,
+    concepts: ["RBI", "SEBI", "IRDAI", "PFRDA", "FSDC", "NaBFID", "NABARD", "NHB", "SIDBI"],
+    body: [
+      { kind: "h2", text: "Four pillars of India's financial system" },
+      { kind: "ul", items: [
+        "Banking & Payments — regulated by RBI (Banking Regulation Act 1949, RBI Act 1934)",
+        "Securities Markets — regulated by SEBI (SEBI Act 1992)",
+        "Insurance — regulated by IRDAI (Insurance Act 1938; IRDAI Act 1999)",
+        "Pension — regulated by PFRDA (PFRDA Act 2013)",
+      ] },
+      { kind: "h2", text: "Financial Stability and Development Council (FSDC)" },
+      { kind: "p", text: "FSDC is the apex inter-regulatory coordination body chaired by the Finance Minister. Members include governors/chairpersons of RBI, SEBI, IRDAI, PFRDA, FMC (now merged into SEBI). It is a non-statutory body set up in 2010." },
+      { kind: "h2", text: "Development Finance Institutions (DFIs)" },
+      { kind: "ul", items: [
+        "NABARD: apex for agriculture & rural credit; supervises RRBs and cooperative banks",
+        "SIDBI: apex for MSME financing and development",
+        "NHB: apex for housing finance; regulates HFCs",
+        "NaBFID: new infrastructure DFI set up under NaBFID Act 2021; ₹20,000 cr paid-up capital",
+        "EXIM Bank: foreign trade financing",
+      ] },
+    ],
+    mcqs: [
+      {
+        q: "FSDC is chaired by:",
+        options: ["RBI Governor", "Finance Minister", "SEBI Chairman", "Cabinet Secretary"],
+        answer: 1,
+        explain: "FSDC is chaired by the Finance Minister of India. It coordinates macroprudential regulation across all financial sector regulators."
+      },
+      {
+        q: "Which act established the National Bank for Financing Infrastructure and Development (NaBFID)?",
+        options: ["NABARD Act 1981", "NaBFID Act 2021", "RBI Act 1934 (amended)", "Development Banks Act 2020"],
+        answer: 1,
+        explain: "NaBFID was established under the National Bank for Financing Infrastructure and Development Act, 2021 as India's principal DFI for long-term infrastructure financing."
+      },
+    ],
+  },
+  {
+    id: "ni01",
+    date: "2026-05-01",
+    category: "NationalInstitutions",
+    title: "NABARD, SIDBI, NHB, EXIM Bank — mandates, ownership & key numbers",
+    summary: "Quick-reference guide to India's national financial institutions: their parent acts, ownership structure, primary mandate and key FY26 data points for Grade B preparation.",
+    readTime: 6,
+    concepts: ["NABARD", "SIDBI", "NHB", "EXIM Bank", "MUDRA", "NaBFID"],
+    body: [
+      { kind: "h2", text: "NABARD" },
+      { kind: "p", text: "National Bank for Agriculture and Rural Development. Established: 12 July 1982 under NABARD Act 1981. Owned by: Government of India (99%) and RBI (1%). Key roles: refinance to cooperative banks and RRBs, RIDF management, supervision of cooperative banks, development support for rural infrastructure. FY26 refinance outstanding: ~₹6.8 lakh crore." },
+      { kind: "h2", text: "SIDBI" },
+      { kind: "p", text: "Small Industries Development Bank of India. Est: April 1990, SIDBI Act 1989. Principal financial institution for MSME sector. Manages MUDRA refinance, Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE). Total assets: ~₹4.2 lakh crore FY26." },
+      { kind: "h2", text: "NHB (National Housing Bank)" },
+      { kind: "p", text: "Est: 1988, NHB Act 1987. Originally a wholly-owned RBI subsidiary; 100% ownership transferred to GoI in 2019. Regulates and supervises Housing Finance Companies (HFCs). Operates refinance facilities for affordable housing." },
+      { kind: "h2", text: "EXIM Bank" },
+      { kind: "p", text: "Export-Import Bank of India. Est: 1982, Export-Import Bank Act 1981. 100% GoI-owned. Finances, facilitates and promotes India's foreign trade. Provides Buyers' Credit, Lines of Credit to foreign govts, Overseas Investment Finance." },
+    ],
+    mcqs: [
+      {
+        q: "What percentage of NABARD is owned by the Government of India?",
+        options: ["51%", "75%", "99%", "100%"],
+        answer: 2,
+        explain: "Government of India holds 99% of NABARD; RBI holds the remaining 1% since August 2010 when RBI's stake was reduced from 72.5%."
+      },
+      {
+        q: "Ownership of National Housing Bank (NHB) was transferred from RBI to the Government of India in:",
+        options: ["2015", "2017", "2019", "2021"],
+        answer: 2,
+        explain: "RBI transferred its entire 100% stake in NHB to the Government of India in 2019, making NHB a wholly government-owned entity."
+      },
+    ],
   },
 ];
 
@@ -335,14 +489,16 @@ const HEATMAP = generateHeatmap();
 
 // Trending concepts (sidebar)
 const TRENDING_CONCEPTS = [
-  { name: "Repo Rate", count: 12, category: "RBI" },
-  { name: "Monetary Policy Committee", count: 9, category: "RBI" },
-  { name: "GNPA / NNPA", count: 8, category: "Banking" },
-  { name: "CPI Inflation", count: 7, category: "Economy" },
-  { name: "Basel III", count: 6, category: "Banking" },
-  { name: "PMJDY", count: 5, category: "Schemes" },
-  { name: "FSR", count: 5, category: "Reports" },
-  { name: "External Commercial Borrowings", count: 4, category: "RBI" },
+  { name: "Repo Rate", count: 12, category: "MonetaryPlans" },
+  { name: "Monetary Policy Committee", count: 9, category: "MonetaryPlans" },
+  { name: "GNPA / NNPA", count: 8, category: "BankingSystems" },
+  { name: "CPI Inflation", count: 7, category: "CurrentAffairs" },
+  { name: "Basel III", count: 6, category: "BankingSystems" },
+  { name: "PMJDY", count: 5, category: "CurrentAffairs" },
+  { name: "FSR", count: 5, category: "NationalInstitutions" },
+  { name: "External Commercial Borrowings", count: 4, category: "FinancialSystems" },
+  { name: "LAF Corridor / SDF", count: 4, category: "MonetaryPlans" },
+  { name: "Capital Adequacy (CRAR)", count: 3, category: "BankingTerms" },
 ];
 
 window.CATEGORIES = CATEGORIES;

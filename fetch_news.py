@@ -20,11 +20,12 @@ RSS_FEEDS = [
 ]
 
 CATEGORY_KEYWORDS = {
-    "RBI":     ["rbi", "reserve bank", "mpc", "repo", "monetary policy", "sdf", "cbdc"],
-    "Banking": ["bank", "npa", "nbfc", "credit", "loan", "deposit", "sbi", "hdfc"],
-    "Economy": ["gdp", "inflation", "cpi", "wpi", "fiscal", "budget", "gst", "india economy"],
-    "Reports": ["report", "survey", "publication", "world bank", "imf", "fsr", "annual"],
-    "Schemes": ["scheme", "pradhan mantri", "yojana", "mission", "programme", "pm "],
+    "MonetaryPlans":        ["mpc", "repo rate", "monetary policy", "sdf", "msf", "crr", "slr", "laf", "inflation target", "rate cut", "rate hike"],
+    "BankingSystems":       ["bank", "npa", "nbfc", "credit", "loan", "deposit", "sbi", "hdfc", "icici", "rbi circular", "banking regulation"],
+    "FinancialSystems":     ["sebi", "irdai", "pfrda", "nabfid", "nabard", "sidbi", "nhb", "exim", "capital market", "financial system"],
+    "NationalInstitutions": ["world bank", "imf", "wto", "oecd", "fsdc", "report", "survey", "fsr", "annual report", "publication"],
+    "CurrentAffairs":       ["gdp", "inflation", "cpi", "wpi", "fiscal", "budget", "gst", "scheme", "yojana", "mission", "pradhan mantri"],
+    "BankingTerms":         ["basel", "capital adequacy", "crar", "tier-1", "tier-2", "psl", "priority sector", "anbc", "npa definition"],
 }
 
 DATA_JSX_PATH = "data.jsx"
@@ -68,7 +69,7 @@ def infer_category(title: str, summary: str) -> str:
     for cat, keywords in CATEGORY_KEYWORDS.items():
         if any(kw in text for kw in keywords):
             return cat
-    return "Economy"
+    return "CurrentAffairs"
 
 
 def load_existing_ids(jsx_content: str) -> set[str]:
