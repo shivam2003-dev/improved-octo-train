@@ -140,11 +140,19 @@ jobs:
             --description "Daily automated news task for Copilot" \
             2>/dev/null || true
 
-          gh issue create \
+          # Create the issue (no --assignee flag — bot can't be assigned via API token)
+          ISSUE_URL=$(gh issue create \
             --repo "$GITHUB_REPOSITORY" \
             --title "Daily news bulletin: $DATE" \
             --body-file issue_body.md \
-            --label "daily-news" \
-            --assignee "copilot"
+            --label "daily-news")
 
-          echo "Issue created and assigned to @copilot"
+          echo "Issue created: $ISSUE_URL"
+
+          # Trigger Copilot agent by posting a comment that @mentions it
+          ISSUE_NUMBER=$(echo "$ISSUE_URL" | grep -o '[0-9]*$')
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "@copilot Please complete this task. Follow all the instructions in the issue body and in the \`news_prompt.md\` file in the repository root."
+
+          echo "Copilot triggered via comment on issue #$ISSUE_NUMBER"
