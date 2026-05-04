@@ -124,30 +124,17 @@ jobs:
         run: |
           DATE=$(date -u +%Y-%m-%d)
 
-          # Skip if issue for today already exists (open OR closed)
-          EXISTING_NUM=$(gh issue list \
-            --repo "$GITHUB_REPOSITORY" \
-            --label "daily-news" \
-            --state all \
-            --json number,title \
-            --jq ".[] | select(.title | contains(\"$DATE\")) | .number" | head -1)
-
-          if [ -n "$EXISTING_NUM" ]; then
-            echo "Issue for $DATE already exists (#$EXISTING_NUM) — skipping."
-            exit 0
-          fi
-
           # Create label if it doesn't exist
           gh label create "daily-news" \
             --color "#0075ca" \
             --description "Daily automated news task for Copilot" \
             2>/dev/null || true
 
-          # @copilot is in the issue body — triggers the agent on creation, no separate comment needed
+          # @copilot is in the issue body — triggers the agent on creation
           gh issue create \
             --repo "$GITHUB_REPOSITORY" \
             --title "Daily news bulletin: $DATE" \
             --body-file issue_body.md \
             --label "daily-news"
 
-          echo "Issue created for $DATE — @copilot triggered via issue body mention"
+          echo "Issue created for $DATE — @copilot triggered"
