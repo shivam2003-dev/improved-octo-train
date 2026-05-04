@@ -152,87 +152,131 @@ function HomePage({ setRoute, search, bookmarks, toggleBookmark, revised, toggle
 
 // ============ ARCHIVE PAGE ============
 function ArchivePage({ setRoute, bookmarks, toggleBookmark, revised, toggleRevised }) {
-  const [year, setYear] = useStateP(2026);
-  const [month, setMonth] = useStateP(4); // May (0-indexed)
-  const [selectedDate, setSelectedDate] = useStateP("2026-05-04");
+  const [search, setSearch] = useStateP("");
+  const [catFilter, setCatFilter] = useStateP(null);
 
-  const dayArticles = ARTICLES.filter(a => a.date === selectedDate);
-
-  const monthStats = useMemoP(() => {
-    let total = 0, days = 0;
-    Object.entries(HEATMAP).forEach(([k, v]) => {
-      const d = new Date(k);
-      if (d.getMonth() === month && d.getFullYear() === year) {
-        total += v;
-        if (v > 0) days++;
-      }
+  // All unique dates sorted newest first
+  const byDate = useMemoP(() => {
+    let list = ARTICLES;
+    if (catFilter) list = list.filter(a => a.category === catFilter);
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      list = list.filter(a =>
+        a.title.toLowerCase().includes(q) ||
+        a.summary.toLowerCase().includes(q) ||
+        (a.concepts || []).some(c => c.toLowerCase().includes(q))
+      );
+    }
+    const groups = {};
+    list.forEach(a => {
+      if (!groups[a.date]) groups[a.date] = [];
+      groups[a.date].push(a);
     });
-    return { total, days };
-  }, [month, year]);
+    return Object.entries(groups).sort(([a], [b]) => b.localeCompare(a));
+  }, [catFilter, search]);
+
+  const totalArticles = byDate.reduce((n, [, items]) => n + items.length, 0);
 
   return (
     <div className="archive-page">
       <div className="page-header">
         <div>
           <div className="kicker">Archive</div>
-          <h1 className="page-title">Browse by date</h1>
-          <p className="page-sub">Activity heatmap across {monthStats.days} active days · {monthStats.total} articles this month</p>
-        </div>
-        <div className="month-nav">
-          <button className="icon-btn" onClick={() => {
-            if (month === 0) { setMonth(11); setYear(y => y-1); } else setMonth(m => m-1);
-          }}><Icon.ChevL width="16" height="16" /></button>
-          <button className="icon-btn" onClick={() => {
-            if (month === 11) { setMonth(0); setYear(y => y+1); } else setMonth(m => m+1);
-          }}><Icon.ChevR width="16" height="16" /></button>
+          <h1 className="page-title">All bulletins</h1>
+          <p className="page-sub">{totalArticles} article{totalArticles !== 1 ? "s" : ""} across {byDate.length} day{byDate.length !== 1 ? "s" : ""}</p>
         </div>
       </div>
 
-      <div className="archive-grid">
-        <div className="archive-cal">
-          <HeatmapCalendar year={year} month={month}
-            onPick={setSelectedDate} selectedDate={selectedDate} />
-
-          <div className="cal-stats">
-            <div className="stat">
-              <div className="stat-num">{monthStats.total}</div>
-              <div className="stat-label">Articles in {new Date(year, month, 1).toLocaleDateString("en-IN", { month: "long" })}</div>
-            </div>
-            <div className="stat">
-              <div className="stat-num">{monthStats.days}</div>
-              <div className="stat-label">Active days</div>
-            </div>
-            <div className="stat">
-              <div className="stat-num">{revised.size}</div>
-              <div className="stat-label">Revised by you</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="archive-day">
-          <div className="day-head">
-            <div>
-              <div className="kicker">Selected date</div>
-              <h2 className="day-date">{fmtDate(selectedDate)}</h2>
-            </div>
-            <button className="primary-btn" onClick={() => setRoute({ page: "daily", date: selectedDate })}>
-              Open full brief <Icon.ArrowR width="12" height="12" />
+      {/* search + category filter bar */}
+      <div className="archive-toolbar">
+        <div className="archive-search-wrap">
+          <Icon.Search width="14" height="14" className="archive-search-icon" />
+          <input
+            className="archive-search"
+            type="text"
+            placeholder="Search titles, summaries, concepts…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          {search && (
+            <button className="archive-clear" onClick={() => setSearch("")}>
+              <Icon.X width="12" height="12" />
             </button>
-          </div>
-          {dayArticles.length === 0 ? (
-            <div className="empty">No bulletins published on this date.</div>
-          ) : (
-            <div className="day-list">
-              {dayArticles.map(a => (
-                <NewsCard key={a.id} article={a}
-                  onOpen={() => setRoute({ page: "daily", date: a.date, articleId: a.id })}
-                  bookmarks={bookmarks} toggleBookmark={toggleBookmark}
-                  revised={revised} toggleRevised={toggleRevised} />
-              ))}
-            </div>
           )}
         </div>
+        <div className="filter-chips">
+          <button className={`chip ${!catFilter ? "active" : ""}`} onClick={() => setCatFilter(null)}>All</button>
+          {Object.keys(CATEGORIES).map(cat => (
+            <button key={cat}
+              className={`chip ${catFilter === cat ? "active" : ""}`}
+              onClick={() => setCatFilter(catFilter === cat ? null : cat)}
+              style={catFilter === cat ? { borderColor: CATEGORIES[cat].color, color: CATEGORIES[cat].ink, background: CATEGORIES[cat].bg } : {}}>
+              <span className="chip-dot" style={{ background: CATEGORIES[cat].color }} />
+              {CATEGORIES[cat].label}
+            </button>
+          ))}
+        </div>
       </div>
+
+      {/* date-grouped line list */}
+      {byDate.length === 0 ? (
+        <div className="empty">No articles match your search.</div>
+      ) : (
+        <div className="archive-timeline">
+          {byDate.map(([date, items]) => {
+            const d = new Date(date + "T00:00:00");
+            const dayNum  = d.getDate();
+            const dayMon  = d.toLocaleDateString("en-IN", { month: "short" });
+            const dayWeek = d.toLocaleDateString("en-IN", { weekday: "long" });
+            return (
+              <div key={date} className="atl-group">
+                {/* date label row */}
+                <div className="atl-date-row">
+                  <div className="atl-date-badge">
+                    <span className="atl-day-num">{dayNum}</span>
+                    <span className="atl-day-mon">{dayMon}</span>
+                  </div>
+                  <div className="atl-date-info">
+                    <span className="atl-weekday">{dayWeek}</span>
+                    <span className="atl-count">{items.length} article{items.length !== 1 ? "s" : ""}</span>
+                  </div>
+                  <button className="link-btn slim atl-brief-btn"
+                    onClick={() => setRoute({ page: "daily", date })}>
+                    Open brief <Icon.ArrowR width="11" height="11" />
+                  </button>
+                </div>
+
+                {/* article lines */}
+                <div className="atl-lines">
+                  {items.map((a, idx) => {
+                    const c = CATEGORIES[a.category];
+                    const isR = revised.has(a.id);
+                    const isB = bookmarks.has(a.id);
+                    return (
+                      <button key={a.id}
+                        className={`atl-line ${isR ? "is-revised" : ""}`}
+                        onClick={() => setRoute({ page: "daily", date: a.date, articleId: a.id })}>
+                        <span className="atl-line-num">{String(idx + 1).padStart(2, "0")}</span>
+                        <span className="atl-line-rule" style={{ background: c.color }} />
+                        <span className="atl-line-cat" style={{ color: c.ink, background: c.bg }}>
+                          {c.label}
+                        </span>
+                        <span className="atl-line-title">{a.title}</span>
+                        <span className="atl-line-meta">
+                          <span><Icon.Clock width="11" height="11" /> {a.readTime}m</span>
+                          {(a.mcqs || []).length > 0 && <span>{a.mcqs.length} MCQ</span>}
+                          {isB && <Icon.BookmarkFill width="11" height="11" style={{ color: "var(--accent)" }} />}
+                          {isR && <Icon.Check width="11" height="11" style={{ color: "var(--green)" }} />}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
