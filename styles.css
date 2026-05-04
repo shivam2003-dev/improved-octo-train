@@ -1633,3 +1633,239 @@ input:focus { outline: none; }
   .rev-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 38px; }
 }
+
+/* ============ ARCHIVE TIMELINE ============ */
+.archive-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.archive-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 480px;
+}
+
+.archive-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--ink-4);
+  pointer-events: none;
+}
+
+.archive-search {
+  width: 100%;
+  padding: 9px 36px 9px 34px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  color: var(--ink);
+  outline: none;
+}
+
+.archive-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-bg);
+}
+
+.archive-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-4);
+  display: flex;
+  padding: 2px;
+}
+
+.archive-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* date group */
+.atl-group {
+  border-top: 1px solid var(--line);
+  padding: 20px 0 8px;
+}
+
+.atl-group:first-child { border-top: none; }
+
+.atl-date-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.atl-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.atl-day-num {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-2);
+  line-height: 1;
+}
+
+.atl-day-mon {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 1.2;
+}
+
+.atl-date-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.atl-weekday {
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.atl-count {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.atl-brief-btn {
+  margin-left: auto;
+}
+
+/* article lines */
+.atl-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-left: 58px;
+}
+
+.atl-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px 9px 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: background 80ms, border-color 80ms;
+}
+
+.atl-line:hover {
+  background: var(--surface-2);
+  border-color: var(--line-2);
+}
+
+.atl-line.is-revised {
+  background: #f0f8f2;
+  border-color: #c4ddc9;
+}
+
+[data-theme="dark"] .atl-line.is-revised {
+  background: #182219;
+  border-color: #2a4030;
+}
+
+.atl-line-num {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-4);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+.atl-line-rule {
+  width: 3px;
+  height: 28px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.atl-line-cat {
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.atl-line-title {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atl-line:hover .atl-line-title {
+  color: var(--accent-2);
+}
+
+.atl-line-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.atl-line-meta > span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+@media (max-width: 680px) {
+  .atl-lines { margin-left: 0; }
+  .atl-line-cat { display: none; }
+  .atl-line-title { font-size: 13px; }
+  .archive-toolbar { gap: 10px; }
+  .archive-search-wrap { max-width: 100%; }
+}
+
+/* loading shimmer for dynamic fetch bar */
+@keyframes shimmer {
+  0%   { opacity: 1; transform: scaleX(0.3); transform-origin: left; }
+  50%  { opacity: 0.8; transform: scaleX(1); transform-origin: left; }
+  100% { opacity: 0; transform: scaleX(1); transform-origin: left; }
+}

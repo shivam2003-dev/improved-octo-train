@@ -1,0 +1,38 @@
+[
+  {
+    "id": "a08",
+    "date": "2026-05-02",
+    "category": "CurrentAffairs",
+    "title": "April CPI inflation eases to 4.1%; food inflation moderates sharply",
+    "summary": "Headline CPI inflation at 4.1% in April 2026 vs 4.6% in March, driven by 220 bps drop in vegetable inflation. Core inflation sticky at 4.4%.",
+    "readTime": 4,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  },
+  {
+    "id": "a09",
+    "date": "2026-05-02",
+    "category": "NationalInstitutions",
+    "title": "IMF World Economic Outlook update: global growth at 2.8% for 2026",
+    "summary": "IMF April WEO update revises global growth up by 10 bps to 2.8%; advanced economies at 1.6%, EMDEs at 4.2%. India retained at 6.8%.",
+    "readTime": 3,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  },
+  {
+    "id": "fs01",
+    "date": "2026-05-02",
+    "category": "FinancialSystems",
+    "title": "Indian Financial System: structure, regulators and their mandates",
+    "summary": "Overview of India's financial system — four key segments (banking, securities markets, insurance, pension), their regulators (RBI, SEBI, IRDAI, PFRDA) and the overarching FSDC.",
+    "readTime": 8,
+    "source": "",
+    "concepts": [],
+    "body": [],
+    "mcqs": []
+  }
+]
