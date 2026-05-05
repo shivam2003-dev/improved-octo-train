@@ -72,18 +72,722 @@
     "mcqs": []
   },
   {
-    "id": "ai-2026-05-04-portfolios-of-rbi-deputy-gov",
+    "id": "auto-2026-05-04-pmi-rises-to-54.7-inflat",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "PMI rises to 54.7; Inflation pressures mount",
+    "summary": "India's manufacturing Purchasing Managers' Index (PMI) rose to 54.7, signalling continued sectoral expansion. The uptick in activity has coincided with mounting inflation pressures, raising concerns about input cost dynamics and the monetary policy outlook.",
+    "readTime": 2,
+    "source": "https://economictimes.indiatimes.com/news/economy/indicators/pmi-rises-to-54-7-inflation-pressures-mount/articleshow/130809786.cms",
+    "concepts": [
+      "Purchasing Managers' Index",
+      "Core Inflation",
+      "Monetary Policy Committee",
+      "Cost-push Inflation",
+      "Inflation Targeting"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "India's manufacturing PMI rose to 54.7, indicating robust expansion in the sector, as a reading above 50 denotes growth while below 50 indicates contraction. The headline figure signals broad-based momentum in new orders and output across manufacturing sub-sectors. However, the uptick in activity has coincided with mounting inflation pressures, suggesting that firms are facing elevated input costs. This dual dynamic of growth alongside rising price pressures poses a key challenge for monetary policymakers managing India's inflation target."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "PMI data is a leading economic indicator closely monitored by the Monetary Policy Committee when setting the repo rate and assessing inflation trends. This article directly links to the monetary policy and inflation targeting sections of the RBI Grade B syllabus, as rising PMI with inflation pressures complicates the central bank's policy stance and transmission decisions."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "PMI (Purchasing Managers' Index): A composite diffusion index where a reading above 50 signals expansion and below 50 signals contraction in manufacturing activity",
+          "Core Inflation: Inflation excluding volatile food and fuel prices, a key metric for the RBI's medium-term monetary policy stance",
+          "CPI (Consumer Price Index): The headline inflation measure tracked by the RBI for its 4% inflation targeting mandate under the FRBM framework",
+          "Cost-push Inflation: Inflation driven by rising production input costs (raw materials, energy) that manufacturers pass on to consumers through higher prices",
+          "Monetary Policy Committee (MPC): RBI's six-member statutory committee mandated to set the policy repo rate to maintain CPI inflation at 4% ±2%",
+          "Inflation Targeting: The flexible framework under which RBI must maintain CPI inflation at 4% with a tolerance band of ±2% over a 5-year period"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "India's manufacturing PMI reading: 54.7",
+          "PMI expansion threshold: above 50; contraction: below 50",
+          "RBI's CPI inflation target: 4% with ±2% tolerance band",
+          "MPC composition: 6 members (3 RBI officials + 3 external experts)"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "What does a PMI reading of 54.7 indicate about India's manufacturing sector?",
+        "options": [
+          "Contraction in manufacturing activity",
+          "Stagnation with no change",
+          "Expansion in manufacturing activity",
+          "A recessionary trend"
+        ],
+        "answer": 2,
+        "explain": "A PMI above 50 indicates expansion; India's manufacturing PMI at 54.7 signals continued and robust growth in manufacturing activity."
+      },
+      {
+        "q": "What concern accompanied India's PMI rise to 54.7, according to the article?",
+        "options": [
+          "Falling export orders",
+          "Mounting inflation pressures",
+          "Rising unemployment in manufacturing",
+          "Declining consumer demand"
+        ],
+        "answer": 1,
+        "explain": "The article states that while PMI rose to 54.7 signalling expansion, inflation pressures are also mounting alongside the growth, posing a challenge for monetary policy."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-domestic-strength-shields",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "Domestic Strength Shields India from $114 Oil Shock: PMEAC Chairman S Mahendra Dev",
+    "summary": "PMEAC Chairman S Mahendra Dev stated that India's domestic economic strength is shielding the country from a potential $114-per-barrel oil price shock. The US-Israel-Iran conflict has not yet significantly driven broad inflation through energy prices, but has caused specific disruptions in the LPG supply chain.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/domestic-strength-shields-india-from-114-oil-shock-pmeac-chairman-s-mahendra-dev/article70761656.ece",
+    "concepts": [
+      "PMEAC",
+      "Cost-push Inflation",
+      "Current Account Deficit",
+      "LPG Supply Chain",
+      "Energy Import Dependency",
+      "Geopolitical Risk Premium"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "Prime Minister's Economic Advisory Council (PMEAC) Chairman S Mahendra Dev stated that India's domestic economic strength is providing a buffer against a potential oil price shock, even as crude prices rose to $114 per barrel. The US-Israel-Iran conflict has not yet significantly driven inflation through energy prices, though it has caused specific disruptions in the LPG supply chain. Mahendra Dev's assessment suggests that India's diversified energy sourcing and robust domestic demand fundamentals are supporting economic resilience despite heightened global geopolitical pressures. India remains vulnerable in the medium term given its high crude oil import dependency."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Oil price shocks are a classic source of cost-push inflation, and the RBI monitors global crude prices when assessing inflationary risks and formulating its monetary policy stance. This article connects to the Grade B syllabus topics of inflation management, current account dynamics, and the impact of geopolitical developments on India's macroeconomic framework."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "PMEAC (Prime Minister's Economic Advisory Council): An advisory body to the Prime Minister of India providing independent economic analysis and policy recommendations",
+          "Cost-push Inflation: Inflation caused by rising production costs such as energy prices that push up overall price levels across the economy",
+          "Current Account Deficit (CAD): Difference between a country's imports and exports; rising oil prices widen India's CAD since India imports approximately 85% of its crude oil",
+          "LPG Supply Chain: The Liquefied Petroleum Gas distribution network; disruptions affect cooking fuel availability and retail prices for households",
+          "Energy Import Dependency: India imports approximately 85% of its crude oil requirements, making it structurally vulnerable to global oil price volatility",
+          "Geopolitical Risk Premium: The additional cost built into commodity prices due to geopolitical tensions and conflicts, reflected in elevated crude oil benchmarks"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Oil price cited in the article: $114 per barrel",
+          "Conflict driving oil price: US-Israel-Iran conflict",
+          "Supply chain disruption: LPG supply chain",
+          "India's crude oil import dependency: approximately 85%",
+          "Shielding factor cited: India's domestic economic strength"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "According to PMEAC Chairman S Mahendra Dev, what has shielded India from the $114-per-barrel oil price shock?",
+        "options": [
+          "Lower import duties on crude oil",
+          "India's domestic economic strength",
+          "Diplomatic agreements with oil-exporting nations",
+          "A sharp rise in domestic oil production"
+        ],
+        "answer": 1,
+        "explain": "The PMEAC Chairman specifically stated that India's domestic economic strength is shielding the country from the $114 oil shock."
+      },
+      {
+        "q": "What specific supply chain disruption was cited in the article as a consequence of the US-Israel-Iran conflict?",
+        "options": [
+          "Petrol and diesel shortage at pumps",
+          "LPG supply chain disruptions",
+          "Natural gas pipeline blockage",
+          "Coal import disruption"
+        ],
+        "answer": 1,
+        "explain": "The article states the conflict has caused specific disruptions in the LPG supply chain, even though it has not yet significantly driven broad inflation through energy prices."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-micro-economic-impact-of",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "Micro-Economic Impact of Budget: Panelists concerned over state finances, laud fiscal consolidation",
+    "summary": "Budget analysis panelists commended the Union Budget's fiscal consolidation measures but raised concerns about revenue shortfalls and growing financial pressures on state governments. The review highlighted the tension between central fiscal discipline and state-level funding adequacy.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/budget/micro-economic-impact-of-budget-panelists-concerned-over-state-finances-laud-fiscal-consolidation/article70600834.ece",
+    "concepts": [
+      "Fiscal Consolidation",
+      "Fiscal Deficit",
+      "State Development Loans",
+      "Revenue Shortfall",
+      "FRBM Act",
+      "Ways and Means Advances"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "Budget panelists lauded the Union Budget's commitment to fiscal consolidation, acknowledging the central government's efforts to reduce the fiscal deficit in line with FRBM targets. However, they simultaneously expressed significant concerns about revenue shortfalls falling below projections and the resultant financial pressures on state governments. The panel highlighted that while the Centre may achieve its fiscal deficit target, states could face strain due to reduced tax devolution and constrained market borrowing capacity. This tension between central fiscal discipline and state-level expenditure needs is a recurring structural challenge in India's federal fiscal architecture."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Fiscal consolidation, state debt dynamics, and the Centre-state fiscal relationship are core topics in the RBI Grade B syllabus under fiscal policy and Indian public finance. The RBI also manages state government borrowings through the Ways and Means Advances mechanism and auctions State Development Loans, making state finances a direct operational concern for the central bank."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Fiscal Consolidation: The process of reducing government budget deficits and stabilising public debt through a combination of expenditure rationalisation and revenue enhancement",
+          "Fiscal Deficit: The gap between total government expenditure and total revenue receipts (including capital receipts excluding borrowings), expressed as a percentage of GDP",
+          "State Development Loans (SDL): Market-borrowing instruments issued by state governments to finance their fiscal deficits, auctioned by the RBI on behalf of states",
+          "Revenue Shortfall: A situation where actual tax and non-tax revenues fall below budgeted projections, constraining government's expenditure space",
+          "FRBM Act (Fiscal Responsibility and Budget Management Act, 2003): Legislation mandating reduction of fiscal deficit; the current medium-term target for the Centre is 4.5% of GDP",
+          "Ways and Means Advances (WMA): Short-term credit facility extended by the RBI to state governments to bridge temporary mismatches between revenue receipts and expenditures"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Panelists' commendation: Fiscal consolidation measures in the Budget",
+          "Key concern raised: Revenue shortfalls and state financial pressures",
+          "RBI mechanism for states: Ways and Means Advances (WMA)",
+          "State borrowing instrument: State Development Loans (SDL)",
+          "FRBM medium-term fiscal deficit target: 4.5% of GDP"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "What did budget panelists primarily commend in their micro-economic analysis of the Union Budget?",
+        "options": [
+          "Increase in defence spending",
+          "Expansion of welfare schemes",
+          "Fiscal consolidation measures",
+          "Corporate tax relief provisions"
+        ],
+        "answer": 2,
+        "explain": "The article states panelists commended the Budget's fiscal consolidation measures while expressing concerns about revenue shortfalls and state financial pressures."
+      },
+      {
+        "q": "What financial pressures were panelists most concerned about in the budget analysis?",
+        "options": [
+          "Rising central government debt levels",
+          "Revenue shortfalls and state financial pressures",
+          "Decline in India's foreign exchange reserves",
+          "Increasing banking sector NPAs"
+        ],
+        "answer": 1,
+        "explain": "According to the article, panelists expressed significant concerns over revenue shortfalls falling below projections and the resultant financial pressures on state governments."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-infrastructure-spending-ge",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "Infrastructure spending gets a leg-up with govt capex pegged at ₹12.2 lakh crore in 2026-27 Budget",
+    "summary": "The Union Budget 2026-27 allocates ₹12.2 lakh crore as government capital expenditure, providing a significant boost to infrastructure development. Key areas include higher provisions for national highways, expressways, and road connectivity in strategically critical regions.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/budget/infrastructure-spending-gets-a-leg-up-with-govt-capex-pegged-at-122-lakh-crore-in-2026-27-budget/article70578179.ece",
+    "concepts": [
+      "Capital Expenditure",
+      "Fiscal Multiplier",
+      "NHAI",
+      "Crowding-in Effect",
+      "Effective Capital Expenditure",
+      "Gross Budgetary Support"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "The Union Budget 2026-27 has pegged government capital expenditure (capex) at ₹12.2 lakh crore, marking a significant leg-up in infrastructure investment from previous years. The higher capex allocation is specifically aimed at enhancing India's transport network, with increased provisions for national highways, expressways, and road connectivity in strategically critical areas. This substantial capital outlay is expected to generate multiplier effects across the economy by stimulating private investment and employment in allied infrastructure sectors. Enhanced road connectivity also improves logistics efficiency, reducing costs for businesses across agriculture, manufacturing, and trade."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Government capital expenditure is a primary fiscal policy tool that impacts economic growth, private investment, and the fiscal deficit, all of which are core to the RBI Grade B syllabus. The RBI monitors capex trends when assessing aggregate demand conditions and deciding on the monetary policy stance, as high government investment can stimulate growth and influence inflation through demand-side channels."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Capital Expenditure (Capex): Government spending on long-term productive assets like roads, ports, and railways that build economic capacity and generate future returns",
+          "Fiscal Multiplier: The ratio of change in GDP to an initial change in government expenditure; infrastructure capex typically has a high fiscal multiplier of 2.5–3x",
+          "NHAI (National Highways Authority of India): The autonomous agency under the Ministry of Road Transport responsible for developing, maintaining, and managing national highways",
+          "Crowding-in Effect: When public infrastructure investment attracts and stimulates private sector investment rather than displacing it, improving long-run growth potential",
+          "Effective Capital Expenditure: A broader measure of infrastructure spending that includes grants-in-aid to states for capital asset creation in addition to direct central capex",
+          "Gross Budgetary Support (GBS): The central government's budgetary allocation to fund capital projects, including central sector schemes and infrastructure investments"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Government capex in 2026-27 Budget: ₹12.2 lakh crore",
+          "Primary objective: Enhance India's transport network",
+          "Focus infrastructure areas: National highways, expressways, road connectivity in critical areas",
+          "Typical fiscal multiplier for infrastructure capex: 2.5–3x"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "What is the government's capital expenditure allocation in the 2026-27 Union Budget?",
+        "options": [
+          "₹10.2 lakh crore",
+          "₹11.1 lakh crore",
+          "₹12.2 lakh crore",
+          "₹13.5 lakh crore"
+        ],
+        "answer": 2,
+        "explain": "The article clearly states that government capex in the 2026-27 Budget is pegged at ₹12.2 lakh crore."
+      },
+      {
+        "q": "Which infrastructure segments received higher provisions in the 2026-27 Budget, according to the article?",
+        "options": [
+          "Ports and shipping only",
+          "National highways, expressways, and road connectivity in critical areas",
+          "Railway freight corridors only",
+          "Urban metro rail projects"
+        ],
+        "answer": 1,
+        "explain": "The article specifies that higher provisions were made for national highways, expressways, and road connectivity in strategically critical areas to enhance India's transport network."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-raise-urea-mrp-pay-ferti",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "Raise urea MRP, pay fertilizer subsidy to farmers, says Economic Survey",
+    "summary": "The Economic Survey has recommended raising the Maximum Retail Price (MRP) of urea and directly transferring fertilizer subsidies to farmers to improve agricultural efficiency and reduce subsidy leakages. The reform targets better targeting of government support to genuine farming beneficiaries.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/agri-business/raise-urea-mrp-pay-fertiliser-subsidy-to-farmers-says-survey/article70565130.ece",
+    "concepts": [
+      "Urea MRP",
+      "Fertilizer Subsidy",
+      "Direct Benefit Transfer",
+      "Economic Survey",
+      "Subsidy Rationalisation",
+      "Agricultural Input Subsidies"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "The Economic Survey recommended raising the Maximum Retail Price (MRP) of urea, which has been kept artificially low through government subsidies for many years, leading to overuse and misallocation. Simultaneously, the Survey proposed that fertilizer subsidies should be paid directly to farmers rather than being routed through manufacturers, adopting a Direct Benefit Transfer approach. This recommendation aims to reduce misuse and leakage of subsidies while ensuring genuine farmers receive adequate support for agricultural inputs. The reform is expected to improve both agricultural efficiency and the fiscal sustainability of India's large fertilizer subsidy programme."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Fertilizer subsidy reform is a significant fiscal policy issue, as the fertilizer subsidy bill is one of the largest components of India's central government expenditure and affects the fiscal deficit. This connects to the RBI Grade B syllabus on fiscal management, subsidy rationalisation, Direct Benefit Transfer as a policy tool, and the agricultural economy's linkage to India's broader macroeconomic framework."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Urea MRP (Maximum Retail Price): The government-mandated price ceiling for urea sales, kept well below market cost through heavy subsidisation to support affordable farm inputs",
+          "Fertilizer Subsidy: Government financial support to make fertilizers affordable for farmers; one of India's largest subsidy line items alongside food and petroleum subsidies",
+          "Direct Benefit Transfer (DBT): The system of directly crediting government subsidies and benefits to beneficiaries' bank accounts using Aadhaar linkage, reducing leakage and diversion",
+          "Economic Survey: The annual document presented by the Chief Economic Adviser to the Finance Minister before the Union Budget, reviewing India's economic performance and recommending reforms",
+          "Subsidy Rationalisation: The policy of reducing or better targeting government subsidies to improve fiscal discipline and ensure benefits reach intended beneficiaries",
+          "Agricultural Input Subsidies: Government financial support for seeds, fertilizers, water, and electricity to reduce farming costs and improve food production efficiency"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Recommendation source: Economic Survey of India",
+          "Product recommended for MRP revision: Urea",
+          "Proposed new subsidy mechanism: Direct transfer to farmers (DBT model)",
+          "Policy objective: Improve agricultural efficiency and reduce subsidy leakage",
+          "Key issue: Artificially low urea MRP causes overuse and misallocation"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "What did the Economic Survey recommend regarding the distribution of fertilizer subsidies?",
+        "options": [
+          "Eliminate all fertilizer subsidies entirely",
+          "Pay the subsidy directly to farmers instead of routing it through manufacturers",
+          "Increase the subsidy amount to fertilizer manufacturing companies",
+          "Import cheaper fertilizers to reduce farmer costs"
+        ],
+        "answer": 1,
+        "explain": "The Economic Survey recommended paying fertilizer subsidies directly to farmers rather than routing them through manufacturers, to reduce leakage and improve targeting."
+      },
+      {
+        "q": "What specific price revision did the Economic Survey recommend for urea?",
+        "options": [
+          "Reducing urea MRP to make it freely available",
+          "Keeping the urea MRP unchanged at current levels",
+          "Raising the urea MRP from its artificially low level",
+          "Abolishing all MRP controls on urea"
+        ],
+        "answer": 2,
+        "explain": "The Economic Survey recommended raising the Maximum Retail Price (MRP) of urea, which has been kept artificially low through government subsidies, leading to inefficiencies."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-gst-rate-cut-domestic-de",
+    "date": "2026-05-04",
+    "category": "CurrentAffairs",
+    "title": "GST rate cut, domestic demand can shield India from Trump tariffs",
+    "summary": "A cut in GST rates on consumer-heavy goods could make products cheaper, stimulate domestic consumption, and help insulate India's economy from the impact of US trade tariffs. Boosting domestic demand is seen as a key countermeasure to offset export headwinds from global trade disruptions.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/macro-economy/gst-rate-cut-domestic-demand-can-shield-india-from-trump-tariffs/article69916178.ece",
+    "concepts": [
+      "GST",
+      "Domestic Demand",
+      "Trade Tariffs",
+      "Consumption Multiplier",
+      "External Shock",
+      "GST Council"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "Analysts have argued that a reduction in Goods and Services Tax (GST) rates on consumer-heavy goods could significantly boost domestic demand in India. A GST cut would make consumer goods cheaper, leading to increased consumer spending and providing a buffer against external economic shocks such as US trade tariffs imposed on Indian exports. This strategy of stimulating domestic consumption as a countermeasure to export headwinds is seen as a key tool to shield the Indian economy from global trade disruptions. Enhanced domestic demand can also partially offset the negative impact on growth from reduced export earnings."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "GST policy directly impacts indirect tax revenue, fiscal management, and domestic demand — all of which are closely linked to the RBI's monetary policy assessments of growth and inflation. The RBI monitors consumer spending trends when assessing aggregate demand conditions, making GST rate changes relevant to both fiscal and monetary policy components of the Grade B syllabus."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "GST (Goods and Services Tax): A comprehensive indirect tax levied on the supply of goods and services in India, subsuming multiple earlier central and state taxes into a unified structure",
+          "Domestic Demand: Consumer and investment spending within an economy; a primary driver of GDP growth and a buffer against export-side shocks",
+          "Trade Tariffs: Taxes imposed by a country on imported goods from another country; US tariffs on Indian exports reduce the competitiveness and volume of Indian goods in the US market",
+          "Consumption Multiplier: The amplified effect of increased consumer spending on overall economic output; a ₹1 GST-driven saving can generate more than ₹1 of GDP growth through spending cycles",
+          "External Shock: An unforeseen adverse event originating outside an economy — such as tariff imposition or commodity price spikes — that disrupts domestic economic conditions",
+          "GST Council: A constitutional body under Article 279A chaired by the Union Finance Minister, with state Finance Ministers as members, responsible for recommending changes to GST rates"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Policy lever proposed: GST rate cut on consumer-heavy goods",
+          "Expected effect: Cheaper consumer goods and increased domestic spending",
+          "External shock cited: Trump-era US tariffs on Indian exports",
+          "Mechanism: Boost domestic demand to offset export headwinds",
+          "GST Council: Constitutional body under Article 279A for rate decisions"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "How can a GST rate cut help shield India from the impact of Trump tariffs, according to the article?",
+        "options": [
+          "By reducing India's import costs on raw materials",
+          "By making consumer goods cheaper and thereby boosting domestic spending",
+          "By directly increasing the competitiveness of Indian exports",
+          "By reducing India's overall trade deficit through tariff reciprocation"
+        ],
+        "answer": 1,
+        "explain": "The article states a GST cut would make consumer-heavy goods cheaper, leading to increased spending and helping insulate the economy from external shocks such as Trump tariffs."
+      },
+      {
+        "q": "Which constitutional body in India is responsible for recommending changes to GST rates?",
+        "options": [
+          "Finance Ministry alone through executive order",
+          "RBI Monetary Policy Committee",
+          "GST Council under Article 279A",
+          "Securities and Exchange Board of India (SEBI)"
+        ],
+        "answer": 2,
+        "explain": "The GST Council, a constitutional body constituted under Article 279A, chaired by the Union Finance Minister with state Finance Ministers as members, is responsible for recommending GST rate changes."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-gst-council-likely-to-mee",
+    "date": "2026-05-04",
+    "category": "FinancialSystems",
+    "title": "GST Council likely to meet soon after winter session, insurance to be in focus",
+    "summary": "The GST Council is expected to convene between December 20 and 25 in Rajasthan, following the winter session of Parliament. A key agenda item is the GST treatment of insurance products, with stakeholders seeking rationalization of the 18% GST rate on insurance premiums.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/gst-council-likely-to-meet-soon-after-winter-session-insurance-to-be-in-focus/article68842048.ece",
+    "concepts": [
+      "GST Council",
+      "Insurance Penetration",
+      "IRDAI",
+      "GST on Insurance",
+      "Rate Rationalisation",
+      "Winter Session of Parliament"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "The GST Council is likely to hold its next meeting between December 20 and 25 in Rajasthan, following the conclusion of the winter session of Parliament. A key agenda item for the meeting is the GST treatment of insurance products, with industry stakeholders and policymakers seeking rationalization of existing GST rates on insurance premiums. The current 18% GST on insurance premiums is widely seen as a barrier to insurance penetration in India, which remains low relative to global benchmarks. The meeting is expected to deliberate on reducing or restructuring this rate to make insurance more affordable and improve financial inclusion."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Insurance sector regulation, GST policy, and financial inclusion are directly relevant to the RBI Grade B syllabus under financial sector regulation and current affairs. Insurance penetration is a key metric for India's financial deepening, and any GST change on insurance would affect both fiscal revenues and the systemic resilience of India's financial sector, which the RBI co-regulates through its oversight of financial conglomerates."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "GST Council: A constitutional body under Article 279A comprising the Union Finance Minister (Chair) and Finance Ministers of all states, responsible for recommending GST rates and policy",
+          "Insurance Penetration: The ratio of total insurance premiums collected to GDP; India's penetration remains low at around 4%, a key policy concern for financial inclusion",
+          "IRDAI (Insurance Regulatory and Development Authority of India): The statutory body under the IRDA Act, 1999 that regulates and develops the insurance sector in India",
+          "GST on Insurance: Insurance products currently attract 18% GST on premiums, which effectively raises the cost of life, health, and general insurance for policyholders",
+          "Rate Rationalisation: The process of streamlining GST rates across sectors to remove anomalies, reduce compliance burden, and stimulate consumption in key sectors",
+          "Winter Session of Parliament: One of the three annual sessions of Parliament (typically November–December) during which GST-related legislation and budget-related matters are often debated"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Expected GST Council meeting dates: December 20–25",
+          "Venue: Rajasthan",
+          "Key agenda item: Insurance-related GST issues",
+          "Current GST rate on insurance premiums: 18%",
+          "India's insurance penetration: approximately 4% of GDP",
+          "Regulatory body for insurance: IRDAI (Insurance Regulatory and Development Authority of India)"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "When is the GST Council expected to meet, according to the article?",
+        "options": [
+          "Between December 10 and 15",
+          "Between December 20 and 25",
+          "In the first week of January",
+          "During the Budget session of Parliament"
+        ],
+        "answer": 1,
+        "explain": "The article states the GST Council is expected to meet between December 20 and 25 in Rajasthan, soon after the winter session of Parliament."
+      },
+      {
+        "q": "Which sector's GST treatment is expected to be the key focus at the upcoming GST Council meeting?",
+        "options": [
+          "Real estate sector",
+          "Automobile manufacturing",
+          "Insurance sector",
+          "Agricultural produce"
+        ],
+        "answer": 2,
+        "explain": "The article explicitly states that insurance will be in focus at the upcoming GST Council meeting, with rationalization of the 18% GST on insurance premiums being a key agenda item."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-india-withstood-geopoliti",
+    "date": "2026-05-04",
+    "category": "MonetaryPlans",
+    "title": "India withstood geopolitical shocks; will navigate future uncertainties too: MPC's Jayanth R Varma",
+    "summary": "MPC external member Jayanth R Varma expressed confidence that India's economy, having withstood past geopolitical shocks, will navigate future global uncertainties. Global growth was expected to slow to 2.9% in 2024 amid heightened geopolitical risks and subdued worldwide economic conditions.",
+    "readTime": 2,
+    "source": "https://www.thehindubusinessline.com/economy/india-withstood-geopolitical-shocks-will-navigate-future-uncertainties-too-mpcs-jayanth-r-varma/article67742751.ece",
+    "concepts": [
+      "Monetary Policy Committee",
+      "Geopolitical Risk",
+      "Global Growth Outlook",
+      "Monetary Policy Transmission",
+      "External Member of MPC",
+      "Economic Resilience"
+    ],
+    "body": [
+      {
+        "kind": "h2",
+        "text": "What happened"
+      },
+      {
+        "kind": "p",
+        "text": "Monetary Policy Committee (MPC) external member Jayanth R Varma stated that India has successfully withstood geopolitical shocks and will be able to navigate future global uncertainties. Varma noted that global economic growth was expected to come down to 2.9% in 2024, reflecting subdued worldwide conditions amid ongoing geopolitical conflicts and financial market volatility. Despite this challenging external environment, Varma expressed confidence in India's domestic economic resilience and its capacity to sustain growth. His remarks highlight the MPC's awareness of global headwinds when calibrating India's monetary policy response."
+      },
+      {
+        "kind": "h2",
+        "text": "Why it matters for RBI Grade B"
+      },
+      {
+        "kind": "p",
+        "text": "Statements by MPC members directly reflect the thinking behind monetary policy decisions and are frequently tested in RBI Grade B examinations. This article connects to syllabus topics including the MPC's mandate and composition, global growth outlook and its domestic implications, and the interaction between external geopolitical shocks and India's monetary policy stance."
+      },
+      {
+        "kind": "h2",
+        "text": "Key concepts to revise"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Monetary Policy Committee (MPC): A six-member statutory committee of the RBI constituted under the RBI Act, 1934 responsible for setting the policy repo rate to maintain CPI inflation at 4% ±2%",
+          "Geopolitical Risk: Uncertainty and market instability arising from political events, armed conflicts, or shifts in international relations that adversely affect economic activity and capital flows",
+          "Global Growth Outlook: Assessments of worldwide economic expansion published by international bodies like IMF, World Bank, and ADB; slowdowns affect India's exports, remittances, and capital inflows",
+          "Monetary Policy Transmission: The mechanism through which changes in the policy repo rate affect bank lending rates, credit growth, consumption, investment, and ultimately inflation and output",
+          "External Member of MPC: Three of the six MPC members are independent external experts appointed by the Government of India for a four-year term to ensure diverse perspectives in rate decisions",
+          "Economic Resilience: An economy's capacity to absorb external shocks — through adequate forex reserves, diversified trade, strong domestic demand, and sound institutions — and return to its growth trajectory"
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Exam-ready data points"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Global growth forecast for 2024 cited: 2.9%",
+          "MPC member quoted: Jayanth R Varma (external member)",
+          "MPC total composition: 6 members (3 RBI officials + 3 external experts appointed by Government)",
+          "MPC inflation mandate: CPI at 4% ±2% over a 5-year period",
+          "India's stance: Resilient despite geopolitical headwinds"
+        ]
+      }
+    ],
+    "mcqs": [
+      {
+        "q": "What global growth figure for 2024 did MPC external member Jayanth R Varma cite in his remarks?",
+        "options": [
+          "3.5%",
+          "2.9%",
+          "2.5%",
+          "3.2%"
+        ],
+        "answer": 1,
+        "explain": "The article states that global growth was expected to come down to 2.9% in 2024, as referenced by MPC external member Jayanth R Varma."
+      },
+      {
+        "q": "Jayanth R Varma, quoted in the article, is a member of which committee of the Reserve Bank of India?",
+        "options": [
+          "Financial Stability and Development Council",
+          "Board for Financial Supervision",
+          "Monetary Policy Committee",
+          "RBI Central Board of Directors"
+        ],
+        "answer": 2,
+        "explain": "Jayanth R Varma is described in the article as an external member of the Monetary Policy Committee (MPC) of the Reserve Bank of India."
+      }
+    ]
+  },
+  {
+    "id": "auto-2026-05-04-portfolios-of-rbi-deputy",
     "date": "2026-05-04",
     "category": "BankingSystems",
     "title": "Portfolios of RBI deputy governor to be distributed after Rohit Jain takes charge",
-    "summary": "Rohit Jain has been appointed as the new Deputy Governor of the Reserve Bank of India, succeeding T Rabi Sankar. His term will last until May 2029, focusing on financial institutions' preparedness against cybersecurity threats.",
-    "readTime": 1,
+    "summary": "Rohit Jain has been appointed as the new Deputy Governor of the Reserve Bank of India, filling the vacancy left by T Rabi Sankar. He will serve until May 2029, with a focus on strengthening financial institutions' preparedness against cybersecurity threats.",
+    "readTime": 2,
     "source": "https://timesofindia.indiatimes.com/business/india-business/portfolios-of-rbi-deputy-governor-to-be-distributed-after-rohit-jain-takes-charge/articleshow/130743271.cms",
     "concepts": [
-      "Deputy Governor",
-      "RBI",
-      "cybersecurity",
-      "bank supervision"
+      "Deputy Governor of RBI",
+      "Bank Supervision",
+      "Cybersecurity in Banking",
+      "RBI Act 1934",
+      "Executive Director RBI",
+      "Operational Risk"
     ],
     "body": [
       {
@@ -92,27 +796,29 @@
       },
       {
         "kind": "p",
-        "text": "Rohit Jain has been appointed as the new Deputy Governor of the Reserve Bank of India, filling the vacancy left by T Rabi Sankar. Jain, previously an executive director overseeing bank supervision, will serve until May 2029. His appointment comes as the RBI focuses on preparing financial institutions for emerging threats like cybersecurity."
+        "text": "Rohit Jain has been appointed as the new Deputy Governor of the Reserve Bank of India, filling the vacancy left by T Rabi Sankar. Jain previously served as an executive director at the RBI overseeing bank supervision, bringing direct regulatory experience to the role. He will serve as Deputy Governor until May 2029, at which point his term is scheduled to conclude. His appointment comes as the RBI focuses on strengthening financial institutions' preparedness against emerging threats like cybersecurity — a domain Jain has previously highlighted as a critical priority area."
       },
       {
         "kind": "h2",
-        "text": "Why it matters for Grade B"
+        "text": "Why it matters for RBI Grade B"
       },
       {
         "kind": "p",
-        "text": "This appointment is relevant for the RBI Grade B exam as it relates to the governance structure of the RBI and its role in banking regulation. Understanding the responsibilities of the Deputy Governor, especially in the context of cybersecurity, is crucial for candidates."
+        "text": "The governance structure of the RBI, including the appointment and responsibilities of its Deputy Governors, is a frequently tested topic in the RBI Grade B exam. Rohit Jain's appointment connects to syllabus areas covering banking regulation, the supervisory mandate of the RBI, and the growing importance of operational risk management — particularly cybersecurity — in India's banking system."
       },
       {
         "kind": "h2",
-        "text": "Key points to remember"
+        "text": "Key concepts to revise"
       },
       {
         "kind": "ul",
         "items": [
-          "Rohit Jain appointed as Deputy Governor of RBI",
-          "Term lasts until May 2029",
-          "Focus on cybersecurity threats",
-          "Previously an executive director overseeing bank supervision"
+          "Deputy Governor of RBI: One of the senior officials (currently four) who assist the Governor in managing RBI's departments, typically overseeing banking regulation, monetary policy operations, or foreign exchange",
+          "Bank Supervision: The RBI's function of overseeing the safety, soundness, and compliance of scheduled commercial banks through on-site inspections and off-site surveillance under the RBI Act",
+          "Cybersecurity in Banking: The protection of banking systems, networks, and customer data from cyber threats; the RBI has issued a comprehensive Cyber Security Framework mandating controls for banks",
+          "Executive Director (RBI): A senior management position at the RBI, below the Deputy Governor level, typically heading specific departments such as banking supervision or monetary policy",
+          "RBI Act, 1934: The founding legislation of the Reserve Bank of India, which governs the appointment, powers, and tenure of the Governor, Deputy Governors, and other officials",
+          "Operational Risk: The risk of loss resulting from inadequate or failed internal processes, people, systems, or external events — including cybersecurity breaches — a key component of Basel III framework"
         ]
       },
       {
@@ -122,163 +828,37 @@
       {
         "kind": "ul",
         "items": [
-          "Appointment of Rohit Jain",
+          "Newly appointed Deputy Governor: Rohit Jain",
+          "Predecessor (vacancy filled): T Rabi Sankar",
           "Term end date: May 2029",
-          "Focus on cybersecurity in financial institutions"
+          "Previous role at RBI: Executive Director (bank supervision)",
+          "Key focus area: Cybersecurity preparedness in financial institutions",
+          "RBI currently has up to 4 Deputy Governors as per the RBI Act"
         ]
       }
     ],
     "mcqs": [
       {
-        "q": "Who has been appointed as the new Deputy Governor of the Reserve Bank of India?",
+        "q": "Who has been appointed as the new Deputy Governor of the Reserve Bank of India, succeeding T Rabi Sankar?",
         "options": [
+          "Swaminathan J",
           "T Rabi Sankar",
           "Rohit Jain",
-          "Executive Director",
-          "None of the above"
+          "Michael Debabrata Patra"
         ],
-        "answer": 1,
-        "explain": "Rohit Jain has been appointed as the new Deputy Governor of the Reserve Bank of India, filling the vacancy left by T Rabi Sankar."
-      }
-    ]
-  },
-  {
-    "id": "ai-2026-05-04-poll-results-earnings-to-dri",
-    "date": "2026-05-04",
-    "category": "CurrentAffairs",
-    "title": "Poll results, earnings to drive markets this week",
-    "summary": "Indian stock markets are expected to experience volatility due to state election results and high crude oil prices. Investors will focus on the implications for inflation, the rupee, and corporate earnings.",
-    "readTime": 1,
-    "source": "https://timesofindia.indiatimes.com/business/india-business/poll-results-earnings-to-drive-markets-this-week/articleshow/130743055.cms",
-    "concepts": [
-      "inflation",
-      "corporate earnings",
-      "crude oil prices"
-    ],
-    "body": [
-      {
-        "kind": "h2",
-        "text": "What happened"
+        "answer": 2,
+        "explain": "Rohit Jain has been appointed as the new Deputy Governor of the RBI, filling the vacancy left by T Rabi Sankar, as stated in the article."
       },
       {
-        "kind": "p",
-        "text": "Indian stock markets are poised for a volatile week, influenced by state election results and elevated crude oil prices due to tensions in West Asia. Investors are expected to closely monitor the impact of these factors on inflation, the rupee, and corporate earnings. Additionally, key economic data and corporate announcements are anticipated to influence market movements."
-      },
-      {
-        "kind": "h2",
-        "text": "Why it matters for Grade B"
-      },
-      {
-        "kind": "p",
-        "text": "This news connects to the RBI Grade B syllabus under current affairs, particularly regarding the impact of political events and global economic factors on financial markets. Understanding these dynamics is crucial for assessing market stability and economic health."
-      },
-      {
-        "kind": "h2",
-        "text": "Key points to remember"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "State election results can significantly influence market sentiment.",
-          "Elevated crude oil prices may lead to increased inflation.",
-          "Corporate earnings announcements are critical for stock market performance.",
-          "The rupee's value can be affected by global economic conditions."
-        ]
-      },
-      {
-        "kind": "h2",
-        "text": "Exam-ready data points"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Impact of state elections on market volatility",
-          "Current crude oil prices",
-          "Inflation trends related to oil prices",
-          "Corporate earnings reports schedule"
-        ]
-      }
-    ],
-    "mcqs": [
-      {
-        "q": "What factors are expected to influence Indian stock markets this week?",
+        "q": "Until when is Rohit Jain's tenure as RBI Deputy Governor scheduled?",
         "options": [
-          "State election results and crude oil prices",
-          "Monsoon predictions and GDP growth",
-          "Interest rates and inflation",
-          "Corporate tax changes and foreign investments"
+          "May 2027",
+          "December 2028",
+          "May 2029",
+          "March 2030"
         ],
-        "answer": 0,
-        "explain": "The article states that Indian stock markets are poised for volatility due to state election results and elevated crude oil prices."
-      }
-    ]
-  },
-  {
-    "id": "ai-2026-05-04-tata-trusts-to-review-nomine",
-    "date": "2026-05-04",
-    "category": "CurrentAffairs",
-    "title": "Tata Trusts to review nominee directors for Tata Sons on May 8",
-    "summary": "A meeting on May 8 by Tata Trusts may lead to changes in nominee directors on the Tata Sons board due to disagreements over a potential IPO. The situation is complicated by new RBI rules that could necessitate a listing and ongoing internal disputes within the trust.",
-    "readTime": 1,
-    "source": "https://timesofindia.indiatimes.com/business/india-business/tata-trusts-to-review-nominee-directors-for-tata-sons-on-may-8/articleshow/130742849.cms",
-    "concepts": [
-      "IPO",
-      "RBI rules",
-      "nominee directors"
-    ],
-    "body": [
-      {
-        "kind": "h2",
-        "text": "What happened"
-      },
-      {
-        "kind": "p",
-        "text": "Tata Trusts is set to hold a significant meeting on May 8 to review the nominee directors on the Tata Sons board. The meeting is driven by disagreements regarding a potential IPO, with Noel Tata opposing it while Venu Srinivasan supports it. This situation is further complicated by new RBI rules that may require a listing and ongoing disputes within the trust."
-      },
-      {
-        "kind": "h2",
-        "text": "Why it matters for Grade B"
-      },
-      {
-        "kind": "p",
-        "text": "This news is relevant to the RBI Grade B exam as it touches on corporate governance and regulatory frameworks, particularly concerning IPOs and the implications of RBI rules on corporate structures."
-      },
-      {
-        "kind": "h2",
-        "text": "Key points to remember"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Tata Trusts meeting on May 8 to review nominee directors",
-          "Disagreements over IPO between Noel Tata and Venu Srinivasan",
-          "New RBI rules may force a listing",
-          "Internal disputes within Tata Trusts"
-        ]
-      },
-      {
-        "kind": "h2",
-        "text": "Exam-ready data points"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "Meeting date: May 8",
-          "Key figures: Noel Tata, Venu Srinivasan"
-        ]
-      }
-    ],
-    "mcqs": [
-      {
-        "q": "What is the main reason for the upcoming Tata Trusts meeting on May 8?",
-        "options": [
-          "To discuss a merger",
-          "To review nominee directors",
-          "To announce a new IPO",
-          "To resolve internal disputes"
-        ],
-        "answer": 1,
-        "explain": "The meeting is primarily to review the nominee directors on the Tata Sons board."
+        "answer": 2,
+        "explain": "According to the article, Rohit Jain will serve as Deputy Governor of the Reserve Bank of India until May 2029."
       }
     ]
   }
